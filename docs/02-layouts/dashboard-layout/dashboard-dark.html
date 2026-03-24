@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic Agent | AI Benchmarker Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ff7351",
+              "surface-container-low": "#0c1326",
+              "primary-dim": "#fd761a",
+              "on-secondary-container": "#fff6f2",
+              "surface-container-highest": "#1c253e",
+              "on-primary": "#511f00",
+              "surface-container-lowest": "#000000",
+              "secondary-fixed-dim": "#ffb379",
+              "tertiary": "#ffcd72",
+              "error-dim": "#d53d18",
+              "outline": "#6f758b",
+              "primary-fixed-dim": "#f06c0b",
+              "inverse-primary": "#9e4400",
+              "primary-container": "#ff7a23",
+              "tertiary-fixed": "#febb28",
+              "surface-container": "#11192e",
+              "on-secondary-fixed": "#542900",
+              "surface-tint": "#ff9153",
+              "on-tertiary-container": "#563b00",
+              "background": "#070d1f",
+              "on-tertiary-fixed-variant": "#614400",
+              "on-tertiary-fixed": "#3c2900",
+              "on-error-container": "#ffd2c8",
+              "surface-dim": "#070d1f",
+              "on-secondary-fixed-variant": "#7e4000",
+              "on-background": "#dfe4fe",
+              "primary-fixed": "#ff7a23",
+              "secondary-fixed": "#ffc69d",
+              "on-error": "#450900",
+              "error-container": "#b92902",
+              "secondary-dim": "#ec872a",
+              "outline-variant": "#41475b",
+              "on-surface-variant": "#a5aac2",
+              "inverse-on-surface": "#4f5469",
+              "on-primary-fixed": "#000000",
+              "surface": "#070d1f",
+              "secondary-container": "#924c00",
+              "on-secondary": "#4b2400",
+              "secondary": "#fd9436",
+              "tertiary-dim": "#efad16",
+              "on-primary-container": "#3f1700",
+              "surface-container-high": "#171f36",
+              "inverse-surface": "#faf8ff",
+              "on-surface": "#dfe4fe",
+              "on-primary-fixed-variant": "#4e1e00",
+              "tertiary-container": "#febb28",
+              "on-tertiary": "#614400",
+              "surface-bright": "#222b47",
+              "primary": "#ff9153",
+              "tertiary-fixed-dim": "#efad16",
+              "surface-variant": "#1c253e"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #070d1f; color: #dfe4fe; }
+        .glass-header { backdrop-filter: blur(20px); }
+        .kinetic-gradient { background: linear-gradient(135deg, #ff9153 0%, #ff7a23 100%); }
+        .recessed-input { background-color: #000000; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary/30">
+<!-- SideNavBar (Fixed Shell) -->
+<aside class="w-[280px] h-screen fixed left-0 top-0 bg-slate-900 shadow-[20px_0_50px_rgba(0,0,0,0.5)] flex flex-col p-6 gap-8 z-50 overflow-y-auto no-scrollbar">
+<div class="flex flex-col gap-1">
+<span class="text-xl font-bold text-orange-500 tracking-tighter">Kinetic Agent</span>
+<span class="text-xs font-['Inter'] font-semibold tracking-tight text-slate-400 uppercase letter-spacing-[0.05em]">Intelligence Hub</span>
+</div>
+<button class="kinetic-gradient text-on-primary py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_chart">add_chart</span>
+<span>New Analysis</span>
+</button>
+<nav class="flex flex-col gap-2">
+<!-- Dashboard Active -->
+<a class="text-orange-500 font-bold bg-slate-800/50 rounded-xl flex items-center gap-4 px-4 py-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Team</span>
+</a>
+<a class="text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6">
+<div class="flex items-center gap-3 p-3 bg-surface-container-high rounded-2xl">
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover" data-alt="portrait of a focused professional man in a minimalist workspace with cool blue ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAezpIHt_COnG9Y_c9ZFbjr3ss3Pcza-Y6BU2yE2Sj4C0fV5R5edUypy1XLRLUNu5r3Zv91x6662sDgVyGx7hLgIDSsRbU8ZMQe_pmLMb3jssU3264aBel3Qvx-XgIR89szC3-mkE6lbMrwvtlSgMGKy3s6Tki6tw-kZUMVRSP2OtbSfQi412kr9gcbdbhexTKe7SZbpl8ssQQfeVSbOOw62x8eGlV7ux5Urd9RkL5kxaXwFU6ZsB3wHqurw5Y9slCp8FIlzbMm6Ik"/>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-bold truncate">Alex Sterling</span>
+<span class="text-xs text-on-surface-variant truncate">Lead Analyst</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[280px] min-h-screen bg-background p-10 flex flex-col gap-6">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center sticky top-0 z-40 w-full glass-header py-4 -mt-4 bg-slate-950/80">
+<div class="flex flex-col">
+<h1 class="font-['Inter'] text-2xl font-bold text-orange-500 tracking-tighter">AI Benchmarker Dashboard</h1>
+<p class="text-sm text-on-surface-variant">Real-time neural performance monitoring</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="recessed-input w-[320px] py-3 pl-12 pr-4 rounded-xl border-none focus:ring-1 focus:ring-orange-500/30 text-sm placeholder:text-on-surface-variant transition-all" placeholder="Search datasets..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-3 rounded-xl hover:bg-slate-800/30 transition-colors text-slate-300 hover:text-orange-400">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-3 rounded-xl hover:bg-slate-800/30 transition-colors text-slate-300 hover:text-orange-400">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Stat Row (4 columns) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Metric Card 1 -->
+<div class="bg-surface-container-high p-6 rounded-2xl flex flex-col gap-4 shadow-xl">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-secondary-container/30 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="speed">speed</span>
+</div>
+<div class="flex items-center gap-1 text-emerald-400 text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+12.4%</span>
+</div>
+</div>
+<div>
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Inference Speed</h3>
+<p class="text-3xl font-bold mt-1">42.8 <span class="text-lg font-medium text-on-surface-variant">ms</span></p>
+</div>
+</div>
+<!-- Metric Card 2 -->
+<div class="bg-surface-container-high p-6 rounded-2xl flex flex-col gap-4 shadow-xl">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-secondary-container/30 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="memory">memory</span>
+</div>
+<div class="flex items-center gap-1 text-emerald-400 text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+2.1%</span>
+</div>
+</div>
+<div>
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Model Accuracy</h3>
+<p class="text-3xl font-bold mt-1">98.4 <span class="text-lg font-medium text-on-surface-variant">%</span></p>
+</div>
+</div>
+<!-- Metric Card 3 -->
+<div class="bg-surface-container-high p-6 rounded-2xl flex flex-col gap-4 shadow-xl">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-secondary-container/30 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="database">database</span>
+</div>
+<div class="flex items-center gap-1 text-error text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_down">trending_down</span>
+<span>-4.2%</span>
+</div>
+</div>
+<div>
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Tokens / Sec</h3>
+<p class="text-3xl font-bold mt-1">2,480</p>
+</div>
+</div>
+<!-- Metric Card 4 -->
+<div class="bg-surface-container-high p-6 rounded-2xl flex flex-col gap-4 shadow-xl">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-secondary-container/30 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+</div>
+<div class="flex items-center gap-1 text-emerald-400 text-xs font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>Active</span>
+</div>
+</div>
+<div>
+<h3 class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Compute Usage</h3>
+<p class="text-3xl font-bold mt-1">84.2 <span class="text-lg font-medium text-on-surface-variant">%</span></p>
+</div>
+</div>
+</section>
+<!-- Analytics Section (2:1 Ratio) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Project Analytics Chart -->
+<div class="lg:col-span-2 bg-surface-container-high rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-xl font-bold">Project Analytics</h2>
+<p class="text-on-surface-variant text-sm">Historical inference benchmark performance</p>
+</div>
+<div class="flex gap-2">
+<span class="bg-surface-container-lowest px-3 py-1 rounded-lg text-xs font-bold border border-outline-variant/20">WEEKLY</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-lg text-xs font-bold">MONTHLY</span>
+</div>
+</div>
+<div class="flex items-end justify-between h-[240px] gap-4">
+<!-- Placeholder for bars using Kinetic Gradients -->
+<div class="w-full flex items-end gap-3 h-full">
+<div class="flex-1 kinetic-gradient opacity-20 h-[40%] rounded-t-lg"></div>
+<div class="flex-1 kinetic-gradient opacity-40 h-[60%] rounded-t-lg"></div>
+<div class="flex-1 kinetic-gradient opacity-30 h-[50%] rounded-t-lg"></div>
+<div class="flex-1 kinetic-gradient opacity-60 h-[80%] rounded-t-lg"></div>
+<div class="flex-1 kinetic-gradient h-full rounded-t-lg relative">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface-bright p-2 rounded-lg text-[10px] font-bold shadow-xl border border-primary/20">98% PEAK</div>
+</div>
+<div class="flex-1 kinetic-gradient opacity-70 h-[85%] rounded-t-lg"></div>
+<div class="flex-1 kinetic-gradient opacity-50 h-[65%] rounded-t-lg"></div>
+<div class="flex-1 kinetic-gradient opacity-30 h-[45%] rounded-t-lg"></div>
+<div class="flex-1 kinetic-gradient opacity-50 h-[60%] rounded-t-lg"></div>
+<div class="flex-1 kinetic-gradient opacity-80 h-[90%] rounded-t-lg"></div>
+</div>
+</div>
+<!-- Chart Labels -->
+<div class="flex justify-between mt-4 text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">
+<span>JAN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span><span>JUL</span><span>AUG</span><span>SEP</span><span>OCT</span>
+</div>
+</div>
+<!-- Reminders List -->
+<div class="bg-surface-container-high rounded-2xl p-8 shadow-2xl flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-xl font-bold">Intelligence Queue</h2>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 group cursor-pointer p-1 hover:bg-slate-800/20 rounded-xl transition-colors">
+<div class="w-6 h-6 rounded-md border-2 border-primary bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm font-bold" data-icon="check">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Validate GPU Cluster 4</span>
+<span class="text-xs text-on-surface-variant">Due in 2 hours</span>
+</div>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer p-1 hover:bg-slate-800/20 rounded-xl transition-colors">
+<div class="w-6 h-6 rounded-md border-2 border-outline-variant hover:border-primary transition-colors"></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Dataset Pruning: V3</span>
+<span class="text-xs text-on-surface-variant">Scheduled for 4:00 PM</span>
+</div>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer p-1 hover:bg-slate-800/20 rounded-xl transition-colors">
+<div class="w-6 h-6 rounded-md border-2 border-outline-variant hover:border-primary transition-colors"></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold">Peer Review: Llama-70b</span>
+<span class="text-xs text-on-surface-variant">High Priority</span>
+</div>
+</div>
+</div>
+<button class="mt-auto border border-primary/20 text-primary py-3 rounded-xl text-sm font-bold hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="bolt">bolt</span>
+                    Process All
+                </button>
+</div>
+</section>
+<!-- Utility Row (1:1 Ratio) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Team Collaboration -->
+<div class="bg-surface-container-high rounded-2xl p-8 shadow-2xl">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-xl font-bold">Active Agents</h2>
+<span class="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-widest">Live Sync</span>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-2xl object-cover" data-alt="close-up of a smiling professional woman with glowing neon office lights in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYLPJgsOYncbyLEKJL2LDZgvpcqZDSPvprxBe9IFlnctgQ1osA2cUvQUOx_Lk9KNzzU3_iO1NBmpctOHwzB_RSxlhIvITiT4s_VEGc03uBZNarmzO1h1BOaQYYtePgB_4bkGEwaKdToP6Ggyo32Uv87YNpH5I1Covmv-N0R8cxegaeq1pNo2B8vVc2Npi8tSnTJbw5F8355pgpMwsD83q2o3sxu84JXu34zz3Gq-cpTwFQJhTvF52IZS6-iMoTGkNvf1CfelUBs8s"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-4 border-surface-container-high"></div>
+</div>
+<div>
+<p class="font-bold text-sm">Elena Vance</p>
+<p class="text-xs text-on-surface-variant">Neural Architect</p>
+</div>
+</div>
+<span class="text-[10px] font-bold text-emerald-400 border border-emerald-400/20 px-2 py-1 rounded uppercase tracking-tighter">Active</span>
+</div>
+<div class="flex items-center justify-between opacity-60">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-2xl object-cover" data-alt="modern headshot of a creative technologist with minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsHyMOmVaHQ0RCQZ3gWhD6ZMCX1GYZzUWJDF3yyRPLelYVbnbHCRJhgghxwrktzFnE3cmxSN_KfQla2Mz7guEz1xlDEq6bpBXnCWvyizulbK8H6Zn5z9jEHcJUEI3bB6BuvZDsGPOAGDjA4hq-1JPb1XwgJ7339XFQuErtSvcOlZpwNCm-_kNYJJDypbzwbbxZo0AADc5vfvRXhYIEOghO1tmMEM7ToZmuF41198JurfUAPe5dxM_RryBvoG9OB6m_pZfcEdK9so8"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-slate-500 rounded-full border-4 border-surface-container-high"></div>
+</div>
+<div>
+<p class="font-bold text-sm">Marcus Chen</p>
+<p class="text-xs text-on-surface-variant">Data Pipeline Eng</p>
+</div>
+</div>
+<span class="text-[10px] font-bold text-slate-400 border border-slate-400/20 px-2 py-1 rounded uppercase tracking-tighter">Offline</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img class="w-12 h-12 rounded-2xl object-cover" data-alt="professional man looking off-camera in a high-tech studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr4WBgVVU-HnFXq0MQ_1_TH81KVvEZ5CJ99yO13pwbyZP-DI6A7OEyNZMSAjzevYa0O_sdlo3aM6xyTp0WwhBMF8zhQBTuJtshw6687CYsIQOV58x1k2WIzkp7vATMOxv6DFpfjpg02gh3QBBJOhiykHqG-GjLpxoTnRjst4U-_AMfTx8XBHcnaig7ycn5XgVjkx8fVPBgKMb8DIN3DEvvl6bgHgwy4rB-pOmcFiCZW48Si3mWHmTtX0YoihU9iNoXP3XZVSm-yUQ"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-orange-500 rounded-full border-4 border-surface-container-high animate-pulse"></div>
+</div>
+<div>
+<p class="font-bold text-sm">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant">Senior ML Engineer</p>
+</div>
+</div>
+<span class="text-[10px] font-bold text-orange-500 border border-orange-500/20 px-2 py-1 rounded uppercase tracking-tighter">Busy</span>
+</div>
+</div>
+</div>
+<!-- Project Progress Gauge -->
+<div class="bg-surface-container-high rounded-2xl p-8 shadow-2xl flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute top-8 left-8">
+<h2 class="text-xl font-bold">Optimization</h2>
+<p class="text-on-surface-variant text-sm">Global training efficiency</p>
+</div>
+<div class="mt-12 relative flex items-center justify-center">
+<!-- Semi-circular SVG Gauge -->
+<svg class="w-64 h-32" viewbox="0 0 100 50">
+<path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="#1c253e" stroke-linecap="round" stroke-width="12"></path>
+<path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="url(#orangeGradient)" stroke-dasharray="125.6" stroke-dashoffset="27.6" stroke-linecap="round" stroke-width="12"></path>
+<defs>
+<lineargradient id="orangeGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#ff9153;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#fd761a;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute top-16 flex flex-col items-center">
+<span class="text-4xl font-black text-orange-500">78%</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em] mt-1">Efficiency</span>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-2 gap-8 w-full">
+<div class="flex flex-col items-center">
+<span class="text-lg font-bold">14.2k</span>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase">Nodes</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-lg font-bold">0.08%</span>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase">Error Rate</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Signal (Pulse Chip) -->
+<div class="fixed bottom-8 right-8 flex items-center gap-3 bg-secondary-container rounded-full px-4 py-2 shadow-2xl border border-primary/20 backdrop-blur-md">
+<div class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</div>
+<span class="text-xs font-bold text-on-secondary-container tracking-wider uppercase">Processing Llama-3 Benchmarks</span>
+</div>
+</body></html>

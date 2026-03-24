@@ -1,0 +1,43 @@
+{
+  "project": "AI Benchmarker Dashboard",
+  "projectId": "3429791752021036306",
+  "lastUpdated": "2026-03-24T19:40:00Z",
+  "items": [
+    {
+      "name": "AI Benchmarker Dashboard (Light Mode)",
+      "screenId": "02ff3ab5a5894a04b16136e88fcf74d1",
+      "path": "dashboard-layout/",
+      "files": {
+        "layout": "dashboard-light.html",
+        "preview": "dashboard-light.png"
+      }
+    },
+    {
+      "name": "AI Benchmarker Dashboard (Dark Mode)",
+      "screenId": "458f918d166b40c79267b83a40ee032c",
+      "path": "dashboard-layout/",
+      "files": {
+        "layout": "dashboard-dark.html",
+        "preview": "dashboard-dark.png"
+      }
+    },
+    {
+      "name": "AI Benchmarker Component Library",
+      "screenId": "a61b55ce0a4f43e3b6bca3d3aaef1f91",
+      "path": "dashboard-layout/",
+      "files": {
+        "layout": "component-library.html",
+        "preview": "component-library.png"
+      }
+    },
+    {
+      "name": "AI Benchmarker Component Library (Dark Mode)",
+      "screenId": "85c954d4784a49928cbcdaeba57dd628",
+      "path": "dashboard-layout/",
+      "files": {
+        "layout": "component-library-dark.html",
+        "preview": "component-library-dark.png"
+      }
+    }
+  ]
+}

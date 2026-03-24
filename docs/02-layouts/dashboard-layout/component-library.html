@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic Intelligence | Design System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffefeb",
+              "on-primary-fixed-variant": "#531900",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-dim": "#6e4800",
+              "surface-container": "#e5e9eb",
+              "tertiary-fixed": "#feae25",
+              "primary-container": "#ff7940",
+              "surface": "#f5f7f9",
+              "on-tertiary": "#fff0e1",
+              "error": "#b31b25",
+              "surface-variant": "#d9dde0",
+              "surface-container-low": "#eef1f3",
+              "surface-container-highest": "#d9dde0",
+              "on-secondary": "#fff0e9",
+              "primary": "#a23800",
+              "surface-bright": "#f5f7f9",
+              "inverse-primary": "#fd651e",
+              "background": "#f5f7f9",
+              "on-error-container": "#570008",
+              "tertiary-fixed-dim": "#eea113",
+              "secondary-fixed": "#ffc5a5",
+              "secondary-container": "#ffc5a5",
+              "on-tertiary-fixed": "#362100",
+              "primary-fixed": "#ff7940",
+              "on-primary-fixed": "#000000",
+              "on-error": "#ffefee",
+              "on-tertiary-fixed-variant": "#5e3c00",
+              "on-secondary-fixed": "#582600",
+              "error-dim": "#9f0519",
+              "outline-variant": "#abadaf",
+              "on-secondary-container": "#763500",
+              "tertiary": "#7e5300",
+              "primary-fixed-dim": "#fa631b",
+              "on-surface": "#2c2f31",
+              "on-secondary-fixed-variant": "#843c00",
+              "inverse-on-surface": "#9a9d9f",
+              "surface-container-high": "#dfe3e6",
+              "on-background": "#2c2f31",
+              "error-container": "#fb5151",
+              "on-primary-container": "#431300",
+              "surface-dim": "#d0d5d8",
+              "tertiary-container": "#feae25",
+              "inverse-surface": "#0b0f10",
+              "secondary-dim": "#833b00",
+              "on-surface-variant": "#595c5e",
+              "surface-tint": "#a23800",
+              "outline": "#747779",
+              "primary-dim": "#8e3000",
+              "on-tertiary-container": "#523400",
+              "secondary-fixed-dim": "#ffb285",
+              "secondary": "#954400"
+            },
+            fontFamily: {
+              "headline": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .benchmark-pulse {
+            height: 4px;
+            background: linear-gradient(90deg, #8e3000 0%, #ff7940 100%);
+            box-shadow: 0 0 12px rgba(255, 121, 64, 0.4);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: #e5e9eb;
+            height: 0.5rem;
+            border-radius: 9999px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -6px;
+            background-color: #a23800;
+            height: 1.25rem;
+            width: 1.25rem;
+            border-radius: 9999px;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .circular-progress {
+            --percentage: 65;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+                        conic-gradient(#ea580c calc(var(--percentage) * 1%), #e5e9eb 0);
+        }
+        .progress-striped {
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+            background-size: 1rem 1rem;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .animate-shimmer {
+            animation: shimmer 1.5s infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Sidebar Shell (SideNavBar) -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-slate-50 border-r-0 flex flex-col p-4 z-40">
+<div class="flex flex-col h-full">
+<!-- Brand Header -->
+<div class="mb-10 px-4">
+<h1 class="text-orange-600 font-bold text-xl tracking-tight">Kinetic Intelligence</h1>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-semibold mt-1">AI Benchmarker</p>
+</div>
+<nav class="flex-1 space-y-8 overflow-y-auto pr-2">
+<!-- Group 1: PLATFORM -->
+<div>
+<h3 class="px-4 text-[10px] font-bold text-on-surface-variant tracking-[0.15em] mb-3">PLATFORM</h3>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 font-medium hover:bg-slate-200 transition-colors rounded-xl active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span>Tests</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Group 2: DATA MANAGEMENT -->
+<div>
+<h3 class="px-4 text-[10px] font-bold text-on-surface-variant tracking-[0.15em] mb-3">DATA MANAGEMENT</h3>
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 font-medium hover:bg-slate-200 transition-colors rounded-xl active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="collections">collections</span>
+<span>Image Sets</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 font-medium hover:bg-slate-200 transition-colors rounded-xl active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span>Test Plan</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 font-medium hover:bg-slate-200 transition-colors rounded-xl active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+<span>Compute</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Group 3: ACCOUNT -->
+<div>
+<h3 class="px-4 text-[10px] font-bold text-on-surface-variant tracking-[0.15em] mb-3">ACCOUNT</h3>
+<ul class="space-y-1">
+<li>
+<a class="bg-orange-600 text-white rounded-xl font-semibold flex items-center gap-3 px-4 py-2 active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 font-medium hover:bg-slate-200 transition-colors rounded-xl active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Billing</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 font-medium hover:bg-slate-200 transition-colors rounded-xl active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="vpn_key">vpn_key</span>
+<span>API Keys</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 font-medium hover:bg-slate-200 transition-colors rounded-xl active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="webhook">webhook</span>
+<span>Web Hooks</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- User Profile Bottom -->
+<div class="mt-auto pt-6 border-t-0">
+<div class="flex items-center gap-3 p-2 bg-slate-100 rounded-2xl">
+<img alt="User profile avatar" class="w-10 h-10 rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAetzAkE8hmix08i9PT5qdVp6PV_rtSEyzavajrdU-D79uw02PLtDt_nj3b-qKjc7CvXKuFMnTqdUuyLgBrp_QVcqXR4qTIyDHIDL8MmJaQe73pXU9Xjgag0J9LF0nXLrjp1VbbRjH-PXBVxFfC_i1nDZ1UoB-qXjYnYPQuIaNF0KD7BiRcz9uVeTY8iUTz8RFiPyORemfobsi0C8Nhz-ip_SZtUVV6JdeVsoTXu1BYGjLjatp0uNSIJ4fUZJKlH0b135uP0gZT95c"/>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-bold truncate">Alex Rivera</p>
+<p class="text-xs text-on-surface-variant truncate">Lead Scientist</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between px-8 h-16 fixed top-0 right-0 w-[calc(100%-16rem)] z-50 bg-white/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center gap-8">
+<span class="text-orange-600 font-black italic text-lg tracking-tight">Benchmarker</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-orange-600 font-bold border-b-2 border-orange-600 h-16 flex items-center" href="#">Dashboard</a>
+<a class="text-slate-500 font-medium hover:text-orange-500 transition-all h-16 flex items-center" href="#">Analytics</a>
+<a class="text-slate-500 font-medium hover:text-orange-500 transition-all h-16 flex items-center" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-5 py-2 rounded-full bg-primary text-on-primary font-bold hover:opacity-80 active:translate-y-px transition-all">
+<span>Run Test</span>
+</button>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined p-2 hover:bg-surface-container-low rounded-full cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined p-2 hover:bg-surface-container-low rounded-full cursor-pointer" data-icon="help_outline">help_outline</span>
+</div>
+</div>
+</header>
+<!-- Body Content -->
+<div class="pt-24 pb-32 px-12 max-w-7xl mx-auto space-y-24">
+<!-- Page Header -->
+<section>
+<h2 class="text-[3.5rem] font-bold tracking-tight text-on-surface leading-tight">System Identity</h2>
+<p class="text-lg text-on-surface-variant max-w-2xl mt-4">A living editorial experience balancing high-energy agentic action with sophisticated technical authority.</p>
+</section>
+<!-- Typography Section -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-semibold tracking-tight">Typography Scale</h3>
+<span class="text-sm font-mono text-outline uppercase tracking-widest">Inter / Geist System</span>
+</div>
+<div class="bg-white rounded-xl p-10 space-y-12">
+<div>
+<span class="block text-[10px] text-outline-variant font-bold tracking-[0.2em] mb-4">DISPLAY LARGE (3.5rem / 56px)</span>
+<h1 class="text-[3.5rem] font-bold tracking-tight text-on-surface">Kinetic Logic</h1>
+</div>
+<div>
+<span class="block text-[10px] text-outline-variant font-bold tracking-[0.2em] mb-4">HEADLINE LARGE (2rem / 32px)</span>
+<h2 class="text-2xl font-semibold tracking-tight text-on-surface">Agentic Architecture and Flow</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<span class="block text-[10px] text-outline-variant font-bold tracking-[0.2em] mb-4">TITLE MEDIUM (1.25rem)</span>
+<p class="text-xl font-medium text-on-surface">Precision benchmarking for enterprise LLMs.</p>
+</div>
+<div>
+<span class="block text-[10px] text-outline-variant font-bold tracking-[0.2em] mb-4">BODY LARGE (1.125rem)</span>
+<p class="text-lg text-on-surface-variant leading-relaxed">The system rejects the clinical approach in favor of a layered, breathable environment. Data is not boxed in; it breathes.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Color Palette Section -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-semibold tracking-tight">Warm Industrial Palette</h3>
+<span class="text-sm font-mono text-outline uppercase tracking-widest">Core Tones</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+<div class="group">
+<div class="aspect-square bg-primary rounded-lg mb-3 shadow-sm group-hover:scale-[1.02] transition-transform"></div>
+<p class="text-sm font-bold">Vivid Orange</p>
+<p class="text-xs text-outline font-mono">#a23800 (Primary)</p>
+</div>
+<div class="group">
+<div class="aspect-square bg-primary-container rounded-lg mb-3 shadow-sm group-hover:scale-[1.02] transition-transform"></div>
+<p class="text-sm font-bold">Orange Glow</p>
+<p class="text-xs text-outline font-mono">#ff7940 (Container)</p>
+</div>
+<div class="group">
+<div class="aspect-square bg-surface-container-low rounded-lg mb-3 shadow-sm group-hover:scale-[1.02] transition-transform"></div>
+<p class="text-sm font-bold">Cool Slate</p>
+<p class="text-xs text-outline font-mono">#eef1f3 (Surface Low)</p>
+</div>
+<div class="group">
+<div class="aspect-square bg-on-surface rounded-lg mb-3 shadow-sm group-hover:scale-[1.02] transition-transform"></div>
+<p class="text-sm font-bold">Industrial Ink</p>
+<p class="text-xs text-outline font-mono">#2c2f31 (On-Surface)</p>
+</div>
+<div class="group">
+<div class="aspect-square bg-tertiary-container rounded-lg mb-3 shadow-sm group-hover:scale-[1.02] transition-transform"></div>
+<p class="text-sm font-bold">Compute Amber</p>
+<p class="text-xs text-outline font-mono">#feae25 (Tertiary)</p>
+</div>
+</div>
+</section>
+<!-- 1. Interactive Inputs -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-semibold tracking-tight">Interactive Inputs</h3>
+<span class="text-sm font-mono text-outline uppercase tracking-widest">Forms &amp; Selection</span>
+</div>
+<div class="bg-white rounded-xl p-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-8">
+<div>
+<label class="block text-[10px] text-outline-variant font-bold tracking-[0.2em] mb-4 uppercase">Combo Box</label>
+<div class="relative group">
+<select class="w-full px-4 py-3 bg-surface-container-low border-0 rounded-2xl appearance-none focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer transition-all">
+<option>Optimized Inference Model</option>
+<option>GPT-4o Precision Engine</option>
+<option>Claude 3.5 Sonnet Fast</option>
+<option>Llama 3 70B Local</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline pointer-events-none group-hover:text-primary" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+<div>
+<label class="block text-[10px] text-outline-variant font-bold tracking-[0.2em] mb-4 uppercase">Range Slider (Vivid Track)</label>
+<div class="px-2">
+<input class="w-full" max="100" min="0" type="range" value="65"/>
+<div class="flex justify-between mt-2 text-[10px] font-bold text-outline uppercase tracking-wider">
+<span>Latency Priority</span>
+<span>Throughput Priority</span>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-[10px] text-outline-variant font-bold tracking-[0.2em] mb-4 uppercase">Multi-select Chips</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full border border-primary/20 flex items-center gap-2">
+                                Production Cluster <span class="material-symbols-outlined text-sm cursor-pointer" data-icon="close">close</span>
+</span>
+<span class="px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-full border border-primary/20 flex items-center gap-2">
+                                AWS East <span class="material-symbols-outlined text-sm cursor-pointer" data-icon="close">close</span>
+</span>
+<span class="px-4 py-1.5 bg-surface-container-low text-on-surface-variant text-xs font-bold rounded-full border border-transparent hover:border-outline-variant/30 cursor-pointer flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Add Region
+                            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Calendar & Date Selection -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-semibold tracking-tight">Calendar &amp; Date Selection</h3>
+<span class="text-sm font-mono text-outline uppercase tracking-widest">Scheduling Architecture</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-4 bg-white rounded-xl p-8 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-bold text-on-surface">September 2024</h4>
+<div class="flex gap-2">
+<button class="p-1.5 hover:bg-surface-container rounded-lg transition-colors"><span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span></button>
+<button class="p-1.5 hover:bg-surface-container rounded-lg transition-colors"><span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-y-4 text-center">
+<div class="text-[10px] font-bold text-outline uppercase">Su</div>
+<div class="text-[10px] font-bold text-outline uppercase">Mo</div>
+<div class="text-[10px] font-bold text-outline uppercase">Tu</div>
+<div class="text-[10px] font-bold text-outline uppercase">We</div>
+<div class="text-[10px] font-bold text-outline uppercase">Th</div>
+<div class="text-[10px] font-bold text-outline uppercase">Fr</div>
+<div class="text-[10px] font-bold text-outline uppercase">Sa</div>
+<div class="text-sm text-outline-variant p-2">28</div>
+<div class="text-sm text-outline-variant p-2">29</div>
+<div class="text-sm text-outline-variant p-2">30</div>
+<div class="text-sm text-outline-variant p-2">31</div>
+<div class="text-sm p-2 hover:bg-surface-container rounded-xl cursor-pointer">1</div>
+<div class="text-sm p-2 hover:bg-surface-container rounded-xl cursor-pointer">2</div>
+<div class="text-sm p-2 hover:bg-surface-container rounded-xl cursor-pointer">3</div>
+<div class="text-sm p-2 hover:bg-surface-container rounded-xl cursor-pointer">4</div>
+<div class="text-sm p-2 hover:bg-surface-container rounded-xl cursor-pointer">5</div>
+<div class="text-sm p-2 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20">6</div>
+<div class="text-sm p-2 hover:bg-surface-container rounded-xl cursor-pointer">7</div>
+<div class="text-sm p-2 hover:bg-surface-container rounded-xl cursor-pointer">8</div>
+<div class="text-sm p-2 hover:bg-surface-container rounded-xl cursor-pointer">9</div>
+<div class="text-sm p-2 hover:bg-surface-container rounded-xl cursor-pointer">10</div>
+</div>
+</div>
+<div class="lg:col-span-8 bg-white rounded-xl p-8 shadow-sm">
+<div class="flex items-center justify-between mb-8 border-b border-surface-container pb-4">
+<h4 class="font-bold">Automated Audit Schedule</h4>
+<span class="text-xs font-bold text-primary uppercase tracking-widest px-3 py-1 bg-primary/5 rounded-full">Kinetic Obsidian Mode</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-6 p-4 bg-surface rounded-2xl group hover:ring-2 hover:ring-primary/20 transition-all cursor-pointer">
+<div class="flex flex-col items-center justify-center w-16 h-16 bg-white rounded-xl border border-surface-container">
+<span class="text-[10px] font-bold text-outline uppercase">SEP</span>
+<span class="text-xl font-bold">06</span>
+</div>
+<div class="flex-1">
+<p class="font-bold">Multimodal Latency Stress Test</p>
+<p class="text-xs text-on-surface-variant">Cluster: AWS-US-EAST-1 • 5 Nodes</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-primary">09:30 AM</p>
+<span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">CONFIRMED</span>
+</div>
+</div>
+<div class="flex items-center gap-6 p-4 bg-surface rounded-2xl group hover:ring-2 hover:ring-primary/20 transition-all cursor-pointer">
+<div class="flex flex-col items-center justify-center w-16 h-16 bg-white rounded-xl border border-surface-container">
+<span class="text-[10px] font-bold text-outline uppercase">SEP</span>
+<span class="text-xl font-bold">12</span>
+</div>
+<div class="flex-1">
+<p class="font-bold">Llama 3 Drift Analysis</p>
+<p class="text-xs text-on-surface-variant">Target: Production-Main-V4</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-primary">02:00 PM</p>
+<span class="text-[10px] font-bold text-outline bg-slate-100 px-2 py-0.5 rounded-full">PENDING</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Progress Indicators -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-semibold tracking-tight">Progress Indicators</h3>
+<span class="text-sm font-mono text-outline uppercase tracking-widest">System Velocity</span>
+</div>
+<div class="bg-white rounded-xl p-10 grid grid-cols-1 md:grid-cols-2 gap-16">
+<div class="space-y-10">
+<div class="space-y-3">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-outline">
+<span>Linear Load State</span>
+<span>72%</span>
+</div>
+<div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-[#ea580c] rounded-full transition-all duration-1000" style="width: 72%"></div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-outline">
+<span>Striped Processing</span>
+<span>45%</span>
+</div>
+<div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-[#ea580c] progress-striped rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-outline">
+<span>Indeterminate Shimmer</span>
+<span>Syncing...</span>
+</div>
+<div class="h-3 w-full bg-surface-container-low rounded-full overflow-hidden relative">
+<div class="absolute inset-0 bg-[#ea580c]/30 rounded-full"></div>
+<div class="absolute inset-y-0 w-1/3 bg-[#ea580c] rounded-full animate-shimmer"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center gap-8">
+<div class="relative w-40 h-40">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container-low" cx="50" cy="50" fill="transparent" r="45" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-[#ea580c]" cx="50" cy="50" fill="transparent" r="45" stroke="currentColor" stroke-dasharray="282.7" stroke-dashoffset="42.4" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-black text-on-surface">85%</span>
+<span class="text-[10px] font-bold text-outline uppercase">Precision</span>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-2 h-12 bg-surface-container-low rounded-full relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-[#ea580c] rounded-full" style="height: 60%"></div>
+</div>
+<span class="mt-2 text-[8px] font-bold uppercase">CPU</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-2 h-12 bg-surface-container-low rounded-full relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-[#ea580c] rounded-full" style="height: 90%"></div>
+</div>
+<span class="mt-2 text-[8px] font-bold uppercase">GPU</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-2 h-12 bg-surface-container-low rounded-full relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-[#ea580c] rounded-full" style="height: 35%"></div>
+</div>
+<span class="mt-2 text-[8px] font-bold uppercase">MEM</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Form Layouts -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-semibold tracking-tight">Form Layouts</h3>
+<span class="text-sm font-mono text-outline uppercase tracking-widest">Complex Flows</span>
+</div>
+<div class="bg-white rounded-xl p-10 max-w-3xl">
+<h4 class="text-xl font-bold mb-8">Create New Benchmarking Project</h4>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Project Name</label>
+<input class="w-full px-5 py-3 bg-surface border-0 rounded-2xl focus:ring-2 focus:ring-primary/20 outline-none text-on-surface placeholder:text-outline-variant" placeholder="e.g. Q3 Latency Audit" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Environment</label>
+<select class="w-full px-5 py-3 bg-surface border-0 rounded-2xl focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer">
+<option>Staging</option>
+<option>Production</option>
+<option>Development</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider ml-1">Description &amp; Parameters</label>
+<textarea class="w-full px-5 py-3 bg-surface border-0 rounded-2xl focus:ring-2 focus:ring-primary/20 outline-none text-on-surface min-h-[120px] placeholder:text-outline-variant" placeholder="Describe the testing parameters and success criteria..."></textarea>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-2xl">
+<div>
+<p class="font-bold text-sm">Automated Scaling</p>
+<p class="text-xs text-on-surface-variant">Enable dynamic compute allocation based on load</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-12 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex justify-end gap-4 pt-4">
+<button class="px-8 py-3 text-on-surface font-bold hover:bg-surface-container transition-colors rounded-full" type="button">Discard</button>
+<button class="px-10 py-3 bg-primary text-on-primary font-bold rounded-full hover:opacity-90 active:scale-95 transition-all shadow-lg shadow-primary/20" type="submit">Create Project</button>
+</div>
+</form>
+</div>
+</section>
+<!-- 3. Advanced Cards -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-semibold tracking-tight">Advanced Cards</h3>
+<span class="text-sm font-mono text-outline uppercase tracking-widest">Information Density</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Project Summary Card -->
+<div class="bg-white p-6 rounded-2xl border border-transparent hover:border-primary/20 transition-all group">
+<div class="flex items-center gap-4 mb-6">
+<div class="p-3 bg-primary/10 text-primary rounded-xl group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+</div>
+<div>
+<h4 class="font-bold">Project Alpha</h4>
+<p class="text-xs text-on-surface-variant">Last active 2m ago</p>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Benchmarking system-wide inference across distributed nodes for multimodal inputs.</p>
+<div class="flex justify-between items-center text-xs font-bold uppercase tracking-widest">
+<span class="text-primary">12 Tests Running</span>
+<span class="text-outline">v2.4.1</span>
+</div>
+</div>
+<!-- Data Preview Card -->
+<div class="bg-white overflow-hidden rounded-2xl border border-transparent hover:shadow-xl transition-all">
+<div class="h-32 bg-slate-100 relative">
+<img alt="Data preview thumbnail" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJvvTO4moGyst6tpto7cq0WMNd0JaRnaKE3ULRdFzvDu7ttL7HpTEeKU9CtZVte0s--xfAn0S8H4_ZGk9xjp0zKIziEop2aNv4G0IZU6tRdpS7GVQS39653z8Z45fGC9YmxY42fa9Ziw_eRV8y_GW4IURky9xGYxEdj4ryKZ94z-f3oUXHXMRU7L09k8fq6hSAn7wEuIUAfMHVNe9qrq0vAIR8MfZGMBx0orU1FwJkl38cN9VI1h9yuxVMSk6Bb-TQ9_GI41BUWp4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
+</div>
+<div class="px-6 pb-6 -mt-6 relative z-10">
+<h4 class="font-bold">Inference Set #42</h4>
+<p class="text-xs text-on-surface-variant mb-4">5,000 JSON Payloads</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-low text-[10px] font-bold rounded-full">RAW</span>
+<span class="px-3 py-1 bg-surface-container-low text-[10px] font-bold rounded-full">VALIDATED</span>
+</div>
+</div>
+</div>
+<!-- Member Card -->
+<div class="bg-white p-6 rounded-2xl flex items-center justify-between border border-transparent hover:border-slate-100 transition-all">
+<div class="flex items-center gap-4">
+<div class="relative">
+<img alt="Team member" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAetzAkE8hmix08i9PT5qdVp6PV_rtSEyzavajrdU-D79uw02PLtDt_nj3b-qKjc7CvXKuFMnTqdUuyLgBrp_QVcqXR4qTIyDHIDL8MmJaQe73pXU9Xjgag0J9LF0nXLrjp1VbbRjH-PXBVxFfC_i1nDZ1UoB-qXjYnYPQuIaNF0KD7BiRcz9uVeTY8iUTz8RFiPyORemfobsi0C8Nhz-ip_SZtUVV6JdeVsoTXu1BYGjLjatp0uNSIJ4fUZJKlH0b135uP0gZT95c"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full"></span>
+</div>
+<div>
+<h4 class="font-bold text-sm">Sarah Chen</h4>
+<p class="text-xs text-on-surface-variant">Senior Engineer</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-outline hover:text-primary" data-icon="chat">chat</button>
+</div>
+</div>
+</section>
+<!-- 4. Avatars & Team -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-semibold tracking-tight">Avatars &amp; Team</h3>
+<span class="text-sm font-mono text-outline uppercase tracking-widest">Presence</span>
+</div>
+<div class="bg-white rounded-xl p-10 flex flex-col md:flex-row items-center gap-16">
+<div class="flex items-center gap-6">
+<div class="relative">
+<img alt="L avatar" class="w-20 h-20 rounded-full object-cover ring-4 ring-green-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAetzAkE8hmix08i9PT5qdVp6PV_rtSEyzavajrdU-D79uw02PLtDt_nj3b-qKjc7CvXKuFMnTqdUuyLgBrp_QVcqXR4qTIyDHIDL8MmJaQe73pXU9Xjgag0J9LF0nXLrjp1VbbRjH-PXBVxFfC_i1nDZ1UoB-qXjYnYPQuIaNF0KD7BiRcz9uVeTY8iUTz8RFiPyORemfobsi0C8Nhz-ip_SZtUVV6JdeVsoTXu1BYGjLjatp0uNSIJ4fUZJKlH0b135uP0gZT95c"/>
+<div class="absolute bottom-1 right-1 w-5 h-5 bg-green-500 border-4 border-white rounded-full"></div>
+</div>
+<div class="relative">
+<img alt="M avatar" class="w-14 h-14 rounded-full object-cover ring-4 ring-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAetzAkE8hmix08i9PT5qdVp6PV_rtSEyzavajrdU-D79uw02PLtDt_nj3b-qKjc7CvXKuFMnTqdUuyLgBrp_QVcqXR4qTIyDHIDL8MmJaQe73pXU9Xjgag0J9LF0nXLrjp1VbbRjH-PXBVxFfC_i1nDZ1UoB-qXjYnYPQuIaNF0KD7BiRcz9uVeTY8iUTz8RFiPyORemfobsi0C8Nhz-ip_SZtUVV6JdeVsoTXu1BYGjLjatp0uNSIJ4fUZJKlH0b135uP0gZT95c"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-slate-300 border-2 border-white rounded-full"></div>
+</div>
+<div class="relative">
+<img alt="S avatar" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAetzAkE8hmix08i9PT5qdVp6PV_rtSEyzavajrdU-D79uw02PLtDt_nj3b-qKjc7CvXKuFMnTqdUuyLgBrp_QVcqXR4qTIyDHIDL8MmJaQe73pXU9Xjgag0J9LF0nXLrjp1VbbRjH-PXBVxFfC_i1nDZ1UoB-qXjYnYPQuIaNF0KD7BiRcz9uVeTY8iUTz8RFiPyORemfobsi0C8Nhz-ip_SZtUVV6JdeVsoTXu1BYGjLjatp0uNSIJ4fUZJKlH0b135uP0gZT95c"/>
+</div>
+</div>
+<div class="flex -space-x-4">
+<img alt="Stack 1" class="w-12 h-12 rounded-full border-4 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAetzAkE8hmix08i9PT5qdVp6PV_rtSEyzavajrdU-D79uw02PLtDt_nj3b-qKjc7CvXKuFMnTqdUuyLgBrp_QVcqXR4qTIyDHIDL8MmJaQe73pXU9Xjgag0J9LF0nXLrjp1VbbRjH-PXBVxFfC_i1nDZ1UoB-qXjYnYPQuIaNF0KD7BiRcz9uVeTY8iUTz8RFiPyORemfobsi0C8Nhz-ip_SZtUVV6JdeVsoTXu1BYGjLjatp0uNSIJ4fUZJKlH0b135uP0gZT95c"/>
+<img alt="Stack 2" class="w-12 h-12 rounded-full border-4 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAetzAkE8hmix08i9PT5qdVp6PV_rtSEyzavajrdU-D79uw02PLtDt_nj3b-qKjc7CvXKuFMnTqdUuyLgBrp_QVcqXR4qTIyDHIDL8MmJaQe73pXU9Xjgag0J9LF0nXLrjp1VbbRjH-PXBVxFfC_i1nDZ1UoB-qXjYnYPQuIaNF0KD7BiRcz9uVeTY8iUTz8RFiPyORemfobsi0C8Nhz-ip_SZtUVV6JdeVsoTXu1BYGjLjatp0uNSIJ4fUZJKlH0b135uP0gZT95c"/>
+<img alt="Stack 3" class="w-12 h-12 rounded-full border-4 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAetzAkE8hmix08i9PT5qdVp6PV_rtSEyzavajrdU-D79uw02PLtDt_nj3b-qKjc7CvXKuFMnTqdUuyLgBrp_QVcqXR4qTIyDHIDL8MmJaQe73pXU9Xjgag0J9LF0nXLrjp1VbbRjH-PXBVxFfC_i1nDZ1UoB-qXjYnYPQuIaNF0KD7BiRcz9uVeTY8iUTz8RFiPyORemfobsi0C8Nhz-ip_SZtUVV6JdeVsoTXu1BYGjLjatp0uNSIJ4fUZJKlH0b135uP0gZT95c"/>
+<div class="w-12 h-12 rounded-full border-4 border-white bg-slate-200 flex items-center justify-center text-xs font-bold text-on-surface-variant">+8</div>
+</div>
+</div>
+</section>
+<!-- 5. Feedback & Progress -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-semibold tracking-tight">Feedback &amp; Progress</h3>
+<span class="text-sm font-mono text-outline uppercase tracking-widest">System States</span>
+</div>
+<div class="bg-white rounded-xl p-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="flex items-center gap-10">
+<div class="circular-progress flex items-center justify-center relative">
+<span class="text-xs font-black">65%</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-bold">Model Training</h4>
+<p class="text-xs text-on-surface-variant">Epoch 4 of 10... estimating 2m left</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-outline">
+<span>Throughput Saturation</span>
+<span>88%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="flex items-center gap-2 px-4 py-2 bg-green-50 text-green-700 rounded-xl text-xs font-bold border border-green-100">
+<span class="w-2 h-2 bg-green-500 rounded-full"></span> Healthy
+                            </span>
+<span class="flex items-center gap-2 px-4 py-2 bg-orange-50 text-orange-700 rounded-xl text-xs font-bold border border-orange-100">
+<span class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span> Analyzing
+                            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Examples -->
+<section>
+<div class="flex items-baseline justify-between mb-8">
+<h3 class="text-2xl font-semibold tracking-tight">Editorial Context</h3>
+<span class="text-sm font-mono text-outline uppercase tracking-widest">Image Style</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative h-96 rounded-xl overflow-hidden group">
+<img alt="Abstract high-tech concept" class="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0 group-hover:scale-105 duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSkMDWJ8_z_-CgWjNR9aNmtBwRjvX6UisaML7_0uQZqmox00565nwdm-9fJGsm9KyNrq-wwvQNCOyzUOGa0pLclDvY2znodfHKoOxjv_LUbrWspAH2Nl4wZvOdXMhqSiRB-1EHB94ed-Ix4RUPrJZRX2jxzn84Klg02EHncC7wni2xUPVgyFvqA0COuaw6SGL382CvpR31yCZ0BeTkcIwhNGHCfwktTmGlgNuCHQFwgfCxWjfeicUXh4dZxBq3ANLUUkFfAyMYfCo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent p-10 flex flex-col justify-end">
+<span class="text-primary-container font-bold text-xs uppercase tracking-[0.2em] mb-2">Agentic Vision</span>
+<h4 class="text-2xl font-bold text-white max-w-xs">Building Autonomous Evaluators</h4>
+</div>
+</div>
+<div class="relative h-96 rounded-xl overflow-hidden group">
+<img alt="High speed processing visualization" class="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0 group-hover:scale-105 duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJvvTO4moGyst6tpto7cq0WMNd0JaRnaKE3ULRdFzvDu7ttL7HpTEeKU9CtZVte0s--xfAn0S8H4_ZGk9xjp0zKIziEop2aNv4G0IZU6tRdpS7GVQS39653z8Z45fGC9YmxY42fa9Ziw_eRV8y_GW4IURky9xGYxEdj4ryKZ94z-f3oUXHXMRU7L09k8fq6hSAn7wEuIUAfMHVNe9qrq0vAIR8MfZGMBx0orU1FwJkl38cN9VI1h9yuxVMSk6Bb-TQ9_GI41BUWp4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent p-10 flex flex-col justify-end">
+<span class="text-primary-container font-bold text-xs uppercase tracking-[0.2em] mb-2">Technical Core</span>
+<h4 class="text-2xl font-bold text-white max-w-xs">The Hardware-Software Synergy</h4>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating AI Command Bar (Glassmorphism) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 glass-panel border border-white/20 px-6 py-4 rounded-full shadow-2xl z-50 flex items-center gap-6">
+<div class="flex items-center gap-3 pr-6 border-r border-on-surface-variant/20">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="text-sm font-bold tracking-tight">System Status: Active</span>
+</div>
+<div class="flex gap-4">
+<span class="text-xs font-bold text-on-surface-variant/60 uppercase tracking-widest cursor-pointer hover:text-primary transition-colors">Documentation</span>
+<span class="text-xs font-bold text-on-surface-variant/60 uppercase tracking-widest cursor-pointer hover:text-primary transition-colors">API Docs</span>
+<span class="text-xs font-bold text-on-surface-variant/60 uppercase tracking-widest cursor-pointer hover:text-primary transition-colors">GitHub</span>
+</div>
+</div>
+</body></html>
