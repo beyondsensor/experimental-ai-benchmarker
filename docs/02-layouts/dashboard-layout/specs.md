@@ -6,10 +6,10 @@ High-fidelity dashboard for the AI Benchmarker system, designed for high-density
 
 ## Visual Assets
 
-- **Interactive Layout:** [dashboard-light.html](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/dashboard-light.html)
-- **High-Resolution Preview:** [dashboard-light.png](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/dashboard-light.png)
-- **Component Library (Light):** [component-library.html](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/component-library.html) | [component-library.png](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/component-library.png)
-- **Component Library (Dark):** [component-library-dark.html](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/component-library-dark.html) | [component-library-dark.png](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/component-library-dark.png)
+- **Interactive Layout:** [dashboard-light.html](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/stitch_ui/dashboard-light.html)
+- **High-Resolution Preview:** [dashboard-light.png](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/stitch_ui/dashboard-light.png)
+- **Component Library (Light):** [component-library.html](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/stitch_ui/component-library.html) | [component-library.png](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/stitch_ui/component-library.png)
+- **Component Library (Dark):** [component-library-dark.html](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/stitch_ui/component-library-dark.html) | [component-library-dark.png](file:///d:/dev/experimental-ai-benchmarker/docs/02-layouts/dashboard-layout/stitch_ui/component-library-dark.png)
 
 ## Design System
 

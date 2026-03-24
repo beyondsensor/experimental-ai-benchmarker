@@ -1,6 +1,102 @@
 {
   "project": "AI Benchmarker Dashboard",
   "projectId": "3429791752021036306",
-  "lastUpdated": "2026-03-24T19:17:00Z",
-  "items": []
+  "lastUpdated": "2026-03-24T21:00:00Z",
+  "modules": [
+    {
+      "id": "MOD-01",
+      "name": "Access Control",
+      "directory": "01-access-control",
+      "screens": [
+        {
+          "id": "AC-01",
+          "name": "Sign In Page",
+          "screenId": "dbf0d23bb1844a36a4873217bbd246cd",
+          "screenIdDark": "8d64f12d57cc439c976dd5182c3cbc0e",
+          "path": "01-access-control/01-sign-in/specs.md",
+          "status": "APPROVED",
+          "files": {
+            "layout": "01-sign-in/stitch_ui/sign-in-light.html",
+            "preview": "01-sign-in/stitch_ui/sign-in-light.png",
+            "layoutDark": "01-sign-in/stitch_ui/sign-in-dark.html",
+            "previewDark": "01-sign-in/stitch_ui/sign-in-dark.png"
+          }
+        },
+        {
+          "id": "AC-02",
+          "name": "2FA (MFA)",
+          "screenId": "216e894ebeec482684c277c0026ced45",
+          "screenIdDark": "55025923e6a648818a2133959c3b1d10",
+          "path": "01-access-control/02-mfa/specs.md",
+          "status": "GENERATED",
+          "files": {
+            "layout": "02-mfa/stitch_ui/mfa-light.html",
+            "preview": "02-mfa/stitch_ui/mfa-light.png",
+            "layoutDark": "02-mfa/stitch_ui/mfa-dark.html",
+            "previewDark": "02-mfa/stitch_ui/mfa-dark.png"
+          }
+        },
+        {
+          "id": "AC-03",
+          "name": "Forget Password",
+          "screenId": "83c895970b3741cf95abb7e34358dc8d",
+          "screenIdDark": "d6282609e64c4b07b3758ee074ab5944",
+          "path": "01-access-control/03-forget-password/specs.md",
+          "status": "GENERATED",
+          "files": {
+            "layout": "03-forget-password/stitch_ui/forget-password-light.html",
+            "preview": "03-forget-password/stitch_ui/forget-password-light.png",
+            "layoutDark": "03-forget-password/stitch_ui/forget-password-dark.html",
+            "previewDark": "03-forget-password/stitch_ui/forget-password-dark.png"
+          }
+        },
+        {
+          "id": "AC-04",
+          "name": "Reset Password",
+          "screenId": "c5e4902adead42cda4bc860de631edc5",
+          "screenIdDark": "d11d1e414baf4f658a6efd5aa7226321",
+          "path": "01-access-control/04-reset-password/specs.md",
+          "status": "GENERATED",
+          "files": {
+            "layout": "04-reset-password/stitch_ui/reset-password-light.html",
+            "preview": "04-reset-password/stitch_ui/reset-password-light.png",
+            "layoutDark": "04-reset-password/stitch_ui/reset-password-dark.html",
+            "previewDark": "04-reset-password/stitch_ui/reset-password-dark.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MOD-02",
+      "name": "Image Sets Management",
+      "directory": "02-image-sets-management",
+      "screens": [
+        {
+          "id": "IS-01",
+          "name": "Image Sets Listing",
+          "screenId": "58fd5f5221d24eeb8ed38458c5ec85ab",
+          "path": "02-image-sets-management/01-listing/specs.md",
+          "status": "GENERATED",
+          "files": {
+            "layout": "02-image-sets-management/01-listing/stitch_ui/listing-light.html",
+            "preview": "02-image-sets-management/01-listing/stitch_ui/listing-light.png"
+          }
+        },
+        {
+          "id": "IS-02",
+          "name": "Image Set Details (Tabs)",
+          "path": "02-image-sets-management/02-details/specs.md",
+          "status": "DRAFT",
+          "files": {}
+        },
+        {
+          "id": "IS-03",
+          "name": "Create Test Set",
+          "path": "02-image-sets-management/03-create/specs.md",
+          "status": "DRAFT",
+          "files": {}
+        }
+      ]
+    }
+  ]
 }

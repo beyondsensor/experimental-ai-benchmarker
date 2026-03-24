@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Benchmarker | Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-dim": "#6e4800",
+              "on-secondary-fixed": "#582600",
+              "inverse-on-surface": "#9a9d9f",
+              "tertiary-container": "#feae25",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#954400",
+              "outline": "#747779",
+              "on-primary-fixed": "#000000",
+              "primary-fixed": "#ff7940",
+              "secondary-fixed": "#ffc5a5",
+              "on-background": "#2c2f31",
+              "primary-container": "#ff7940",
+              "on-tertiary-fixed-variant": "#5e3c00",
+              "on-primary": "#ffefeb",
+              "surface-dim": "#d0d5d8",
+              "on-primary-container": "#431300",
+              "surface-container-low": "#eef1f3",
+              "on-surface-variant": "#595c5e",
+              "secondary-container": "#ffc5a5",
+              "surface-container": "#e5e9eb",
+              "surface-container-highest": "#d9dde0",
+              "surface-variant": "#d9dde0",
+              "surface-container-high": "#dfe3e6",
+              "secondary-dim": "#833b00",
+              "tertiary-fixed-dim": "#eea113",
+              "primary": "#a23800",
+              "background": "#f5f7f9",
+              "on-tertiary": "#fff0e1",
+              "on-error": "#ffefee",
+              "primary-dim": "#8e3000",
+              "on-secondary-container": "#763500",
+              "secondary-fixed-dim": "#ffb285",
+              "on-secondary": "#fff0e9",
+              "outline-variant": "#abadaf",
+              "on-primary-fixed-variant": "#531900",
+              "tertiary": "#7e5300",
+              "on-tertiary-fixed": "#362100",
+              "surface": "#f5f7f9",
+              "inverse-surface": "#0b0f10",
+              "surface-bright": "#f5f7f9",
+              "on-surface": "#2c2f31",
+              "error": "#b31b25",
+              "primary-fixed-dim": "#fa631b",
+              "on-tertiary-container": "#523400",
+              "error-dim": "#9f0519",
+              "on-secondary-fixed-variant": "#843c00",
+              "on-error-container": "#570008",
+              "tertiary-fixed": "#feae25",
+              "inverse-primary": "#fd651e",
+              "error-container": "#fb5151",
+              "surface-tint": "#a23800"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neural-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden">
+<main class="flex min-h-screen">
+<!-- Left Panel: Hero (50%) - PRESERVED EXACTLY -->
+<section class="hidden lg:flex w-1/2 relative bg-[#020617] flex-col justify-between p-16 overflow-hidden">
+<!-- Neural Network Visualization (Abstract Background) -->
+<div class="absolute inset-0 z-0 neural-bg opacity-40">
+<div class="absolute inset-0" data-alt="abstract cyan and teal neural network visualization with organic flowing fibers on a deep obsidian background, high-end technical aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvNWJIv99C6RsNwlTpYPfZUCx08T3oSuq8016HFv6gQObdPjYSURuj0dx8AtKYFqwkpk3IF9OwmrjNXycB5Zlz5G1SUfXsjfPrYkeIb1O0a0mSx3bOolwKHfgbV_8Q54UhwSyEN3TJVU0fGon8j6IiVlmSYSB_xnd9Guwr60j0WIZxTH240QmI29GzfRtyQmAC3oX5ryoOMrYVPVJx73wgkvRuHrVa5o3bhrhYlhoHhOQXnd4TFlob_vtfmOFcDNYYxGPS3cyS2lM'); background-size: cover; background-position: center; mix-blend-mode: overlay;"></div>
+</div>
+<!-- Header Block -->
+<div class="relative z-10 flex items-center gap-4">
+<span class="text-2xl font-black text-white tracking-tighter">AI Benchmarker</span>
+<span class="bg-primary px-3 py-1 rounded-full text-[10px] font-bold tracking-widest text-white uppercase">KINETIC INTELLIGENCE</span>
+</div>
+<!-- Brand Message -->
+<div class="relative z-10 max-w-xl">
+<h1 class="text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+                The Kinetic Intelligence.
+            </h1>
+<p class="text-xl text-slate-400 font-light leading-relaxed">
+                Experience the next generation of high-performance AI benchmarking. Measure, optimize, and deploy with industrial precision.
+            </p>
+</div>
+<!-- Active Optimization Widget -->
+<div class="relative z-10 glass-panel p-8 rounded-xl max-w-md">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1">Active Optimization</p>
+<h3 class="text-white text-lg font-semibold">Llama-3-70B-Instruct</h3>
+</div>
+<div class="text-right">
+<span class="text-primary-container text-2xl font-black">98.4%</span>
+<p class="text-[10px] text-slate-500 uppercase">Precision</p>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="h-1.5 w-full bg-slate-800 rounded-full mb-6 overflow-hidden">
+<div class="h-full bg-primary-container shadow-[0_0_15px_rgba(255,121,64,0.5)] w-[98.4%]"></div>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">Latency</p>
+<p class="text-white font-mono font-medium">12ms</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">Tokens/Sec</p>
+<p class="text-white font-mono font-medium">145</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">Status</p>
+<p class="text-primary-container font-bold text-xs">PEAK</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Panel: Form (50%) - UPDATED TO 2FA -->
+<section class="w-full lg:w-1/2 bg-white flex flex-col justify-center items-center p-8 md:p-24 relative">
+<div class="w-full max-w-md space-y-10">
+<!-- Title Section -->
+<div class="space-y-2">
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">Verification Required</h2>
+<p class="text-on-surface-variant font-medium">Enter the 6-digit code sent to your device to proceed.</p>
+</div>
+<!-- Form Component -->
+<form class="space-y-8">
+<!-- 6-digit PIN inputs -->
+<div class="flex justify-between gap-2">
+<input class="w-full h-14 bg-surface-container-low border-0 rounded-[12px] text-center text-xl font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+<input class="w-full h-14 bg-surface-container-low border-0 rounded-[12px] text-center text-xl font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+<input class="w-full h-14 bg-surface-container-low border-0 rounded-[12px] text-center text-xl font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+<input class="w-full h-14 bg-surface-container-low border-0 rounded-[12px] text-center text-xl font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+<input class="w-full h-14 bg-surface-container-low border-0 rounded-[12px] text-center text-xl font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+<input class="w-full h-14 bg-surface-container-low border-0 rounded-[12px] text-center text-xl font-bold text-on-surface focus:ring-2 focus:ring-primary-container transition-all" inputmode="numeric" maxlength="1" pattern="\d*" type="text"/>
+</div>
+<!-- Verify Button -->
+<button class="w-full bg-[#EA580C] text-white font-bold py-4 rounded-[12px] shadow-lg shadow-orange-500/20 hover:bg-primary-dim transition-all active:scale-[0.98] duration-200" type="submit">
+                    Verify
+                </button>
+</form>
+<!-- Footer Links -->
+<div class="space-y-8 pt-4">
+<div class="flex flex-col items-center gap-4 text-sm">
+<button class="text-primary font-bold hover:underline underline-offset-4" type="button">Resend Code</button>
+<button class="text-on-surface-variant font-medium hover:text-primary transition-colors" type="button">Use another method</button>
+</div>
+<div class="flex justify-center gap-6 pt-8 border-t border-surface-container-low">
+<a class="text-[10px] uppercase tracking-widest font-bold text-outline-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-[10px] uppercase tracking-widest font-bold text-outline-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<!-- Mobile Branding -->
+<div class="lg:hidden absolute top-8 left-8 flex items-center gap-3">
+<span class="text-xl font-black text-on-surface tracking-tighter">AI Benchmarker</span>
+</div>
+</section>
+</main>
+</body></html>
