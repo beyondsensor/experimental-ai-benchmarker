@@ -85,16 +85,39 @@
         {
           "id": "IS-02",
           "name": "Image Set Details (Tabs)",
+          "screenId": "342144e421f740daa4f67a8b661c625e",
+          "screenIdImagesTab": "29df1cf36a154fdc8b3eab0abe290c95",
+          "screenIdSettingsTab": "dc6aee3de7554876864b77a9c5bc7c74",
           "path": "02-image-sets-management/02-details/specs.md",
-          "status": "DRAFT",
-          "files": {}
+          "status": "GENERATED",
+          "files": {
+            "layout": "02-image-sets-management/02-details/stitch_ui/details-light.html",
+            "preview": "02-image-sets-management/02-details/stitch_ui/details-light.png",
+            "layoutImagesTab": "02-image-sets-management/02-details/stitch_ui/details-images-light.html",
+            "previewImagesTab": "02-image-sets-management/02-details/stitch_ui/details-images-light.png",
+            "layoutSettingsTab": "02-image-sets-management/02-details/stitch_ui/details-settings-light.html",
+            "previewSettingsTab": "02-image-sets-management/02-details/stitch_ui/details-settings-light.png"
+          }
         },
         {
           "id": "IS-03",
-          "name": "Create Test Set",
+          "name": "Create Image Set",
+          "screenId": "e5b076f705f641daa280865b48d88c7c",
+          "screenIdFilled": "eef4b25c9af84706823805385d179a6b",
+          "screenIdLoading": "4f33cbef574d47f2ba1ac9403dd0c8f5",
+          "screenIdSuccess": "045053b6d08a4b5193f19c92d70d1f5a",
           "path": "02-image-sets-management/03-create/specs.md",
-          "status": "DRAFT",
-          "files": {}
+          "status": "GENERATED",
+          "files": {
+            "layout": "02-image-sets-management/03-create/stitch_ui/create-light.html",
+            "preview": "02-image-sets-management/03-create/stitch_ui/create-light.png",
+            "layoutFilled": "02-image-sets-management/03-create/stitch_ui/create-filled-light.html",
+            "previewFilled": "02-image-sets-management/03-create/stitch_ui/create-filled-light.png",
+            "layoutLoading": "02-image-sets-management/03-create/stitch_ui/create-loading-light.html",
+            "previewLoading": "02-image-sets-management/03-create/stitch_ui/create-loading-light.png",
+            "layoutSuccess": "02-image-sets-management/03-create/stitch_ui/create-success-light.html",
+            "previewSuccess": "02-image-sets-management/03-create/stitch_ui/create-success-light.png"
+          }
         }
       ]
     }

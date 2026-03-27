@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic AI | Autonomous Urban Nav - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#EA580C",
+                        "surface": "#FFFFFF",
+                        "background": "#F8FAFC",
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "1.5rem", /* 24px as requested */
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .benchmark-pulse {
+            background: linear-gradient(90deg, #EA580C 0%, #FB923C 100%);
+        }
+    </style>
+</head>
+<body class="text-slate-900 antialiased">
+<!-- Fixed 280px Sidebar (Preserved exactly as is) -->
+<aside class="fixed left-0 top-0 h-full w-[280px] flex flex-col p-6 gap-6 z-50 border-r border-slate-200 bg-slate-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-orange-500/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h1 class="text-2xl font-black text-primary tracking-tighter uppercase">Kinetic AI</h1>
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Intelligence Engine</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-1">
+<div class="flex flex-col gap-1">
+<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Platform</p>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">science</span>
+                Tests
+            </a>
+</div>
+<div class="flex flex-col gap-1 mt-4">
+<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Data Management</p>
+<a class="flex items-center gap-3 px-4 py-2.5 bg-white text-primary rounded-xl shadow-sm font-semibold text-sm transition-all border border-slate-200/50" href="#">
+<span class="material-symbols-outlined text-[20px]">image_aspect_ratio</span>
+                Image Sets
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+                Test Plan
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">memory</span>
+                Compute
+            </a>
+</div>
+<div class="flex flex-col gap-1 mt-4">
+<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Account</p>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+                Billing
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">key</span>
+                API Keys
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">webhook</span>
+                Web Hooks
+            </a>
+</div>
+</nav>
+<div class="mt-auto p-4 bg-slate-200/50 rounded-xl flex items-center gap-3">
+<img alt="Alex Rivera" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqXzEDwL_a-ZlZyMH6tr_1mwWRh-M20C7S5iyHrnCG3rtFtTSX_GxYM8IHuLSKui25jL-udaSSCRE9VViudtnP-9flxbVDf5ZWR2kpFy_lXaXiuJDPLmaujfPn1gwoG9XAi3_YSmcN-8RgsFIKmlvDhaExHVnbTo7uPqLppxPzlWLBhSSXeI172OzDR4BK2Mc-T0tmRAHcd4v6HV8GpDHNnjHKqbzuMTcDhgLd4YdZeAT0Wy-QV3PgUG6q3P2paWzSWrG_GEc5wkA"/>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Alex Rivera</p>
+<p class="text-xs text-slate-500 truncate">Pro Analyst</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer hover:text-primary">logout</span>
+</div>
+</aside>
+<!-- Main Content Panel -->
+<main class="ml-[280px] min-h-screen">
+<!-- Global Header Utility Bar (Intact) -->
+<header class="flex justify-between items-start py-8 px-10 w-full sticky top-0 z-40 bg-background/80 backdrop-blur-md">
+<div class="flex flex-col">
+<nav class="flex items-center gap-2 mb-2 text-xs font-bold text-slate-400 uppercase tracking-widest">
+<span>Home</span>
+<span class="text-[10px] opacity-50">/</span>
+<a class="hover:text-primary transition-colors" href="#">Image Sets</a>
+<span class="text-[10px] opacity-50">/</span>
+<span class="text-slate-600">Autonomous Urban Nav</span>
+</nav>
+<h2 class="text-5xl font-black tracking-tight text-slate-900 leading-tight">Autonomous Urban Nav</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-primary rounded-full border-2 border-background"></span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+</header>
+<div class="px-10 pb-12 flex flex-col gap-8">
+<!-- Tab Navigation (Updated: Settings Active) -->
+<div class="flex items-center gap-8 border-b border-slate-200/50">
+<button class="pb-4 text-sm font-semibold text-slate-400 hover:text-slate-600 transition-all">Overview</button>
+<button class="pb-4 text-sm font-semibold text-slate-400 hover:text-slate-600 transition-all">Images</button>
+<button class="pb-4 text-sm font-bold text-primary border-b-2 border-primary transition-all">Settings</button>
+</div>
+<!-- Settings Content Area -->
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-8">
+<!-- General Settings Group -->
+<section class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100/50">
+<div class="flex flex-col gap-6">
+<header>
+<h3 class="text-lg font-bold text-slate-900">General Settings</h3>
+<p class="text-sm text-slate-500">Configure global access and security parameters for this set.</p>
+</header>
+<!-- Privacy Settings (Segmented Control) -->
+<div class="flex flex-col gap-3">
+<label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Privacy Settings</label>
+<div class="flex p-1 bg-slate-100 rounded-xl w-fit">
+<button class="px-6 py-2 text-xs font-bold rounded-lg bg-white text-primary shadow-sm transition-all">Private</button>
+<button class="px-6 py-2 text-xs font-bold rounded-lg text-slate-500 hover:text-slate-700 transition-all">Global</button>
+</div>
+</div>
+<!-- Encryption (Toggle Switch) -->
+<div class="flex items-center justify-between py-4 bg-slate-50 rounded-2xl px-6">
+<div>
+<p class="text-sm font-bold text-slate-900">End-to-End Encryption</p>
+<p class="text-xs text-slate-500">Encrypt all visual assets at rest using AES-256.</p>
+</div>
+<button class="w-12 h-6 bg-primary rounded-full relative flex items-center px-1 transition-colors">
+<span class="w-4 h-4 bg-white rounded-full translate-x-6 shadow-sm"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Processing Rules Group -->
+<section class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100/50">
+<div class="flex flex-col gap-6">
+<header>
+<h3 class="text-lg font-bold text-slate-900">Processing Rules</h3>
+<p class="text-sm text-slate-500">Define how the intelligence engine handles new ingestions.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Tonal Optimization (Dropdown) -->
+<div class="flex flex-col gap-3">
+<label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Tonal Optimization</label>
+<div class="relative">
+<select class="appearance-none w-full bg-slate-50 border-none rounded-xl px-4 py-3 text-sm font-medium text-slate-700 focus:ring-2 focus:ring-primary/20">
+<option>Standard</option>
+<option>Deep Neural</option>
+<option>High-Contrast</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Tagging Engine (Multi-select) -->
+<div class="flex flex-col gap-3">
+<label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Tagging Engine</label>
+<div class="w-full bg-slate-50 rounded-xl px-4 py-3 flex items-center justify-between group cursor-pointer border border-transparent hover:border-slate-200 transition-all">
+<div class="flex gap-2">
+<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded-md">V4-Vision</span>
+<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded-md">YOLO-X</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">add</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions Card -->
+<section class="bg-slate-100/50 rounded-2xl p-6 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="px-8 py-3 bg-primary text-white text-xs font-black rounded-xl shadow-lg shadow-orange-500/20 hover:bg-orange-600 transition-all uppercase tracking-widest">
+                            Save Changes
+                        </button>
+<button class="px-8 py-3 bg-transparent text-slate-400 hover:text-red-500 text-xs font-bold rounded-xl transition-all uppercase tracking-widest">
+                            Cancel
+                        </button>
+</div>
+<button class="px-6 py-3 border-2 border-slate-200 text-red-400 hover:text-red-600 hover:border-red-100 hover:bg-red-50 text-xs font-black rounded-xl transition-all uppercase tracking-widest">
+                        Archive Set
+                    </button>
+</section>
+</div>
+<!-- Helpful Info Sidebar -->
+<div class="col-span-12 lg:col-span-4">
+<div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100/50 flex flex-col gap-6">
+<div class="w-12 h-12 bg-orange-50 text-primary rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-900 mb-2">Configuration Guide</h4>
+<p class="text-xs text-slate-500 leading-relaxed mb-4">
+                            Changes made to processing rules will only apply to images uploaded after the settings are saved. To re-process existing images, please use the <strong>Bulk Actions</strong> menu in the Image Set view.
+                        </p>
+<a class="text-xs font-bold text-primary hover:underline flex items-center gap-2 uppercase tracking-widest" href="#">
+                            View Documentation
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

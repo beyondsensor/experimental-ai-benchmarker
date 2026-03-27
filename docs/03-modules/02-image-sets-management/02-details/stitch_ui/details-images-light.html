@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic AI | Autonomous Urban Nav - Images</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#EA580C",
+                        "surface": "#FFFFFF",
+                        "background": "#F8FAFC",
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "1.5rem", /* 24px as requested */
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .benchmark-pulse {
+            background: linear-gradient(90deg, #EA580C 0%, #FB923C 100%);
+        }
+    </style>
+</head>
+<body class="text-slate-900 antialiased">
+<!-- Fixed 280px Sidebar (Preserved exactly as is) -->
+<aside class="fixed left-0 top-0 h-full w-[280px] flex flex-col p-6 gap-6 z-50 border-r border-slate-200 bg-slate-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-orange-500/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h1 class="text-2xl font-black text-primary tracking-tighter uppercase">Kinetic AI</h1>
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Intelligence Engine</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-1">
+<div class="flex flex-col gap-1">
+<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Platform</p>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">science</span>
+                    Tests
+                </a>
+</div>
+<div class="flex flex-col gap-1 mt-4">
+<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Data Management</p>
+<a class="flex items-center gap-3 px-4 py-2.5 bg-white text-primary rounded-xl shadow-sm font-semibold text-sm transition-all border border-slate-200/50" href="#">
+<span class="material-symbols-outlined text-[20px]">image_aspect_ratio</span>
+                    Image Sets
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+                    Test Plan
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">memory</span>
+                    Compute
+                </a>
+</div>
+<div class="flex flex-col gap-1 mt-4">
+<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Account</p>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+                    Billing
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">key</span>
+                    API Keys
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">webhook</span>
+                    Web Hooks
+                </a>
+</div>
+</nav>
+<div class="mt-auto p-4 bg-slate-200/50 rounded-xl flex items-center gap-3">
+<img alt="Alex Rivera" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqXzEDwL_a-ZlZyMH6tr_1mwWRh-M20C7S5iyHrnCG3rtFtTSX_GxYM8IHuLSKui25jL-udaSSCRE9VViudtnP-9flxbVDf5ZWR2kpFy_lXaXiuJDPLmaujfPn1gwoG9XAi3_YSmcN-8RgsFIKmlvDhaExHVnbTo7uPqLppxPzlWLBhSSXeI172OzDR4BK2Mc-T0tmRAHcd4v6HV8GpDHNnjHKqbzuMTcDhgLd4YdZeAT0Wy-QV3PgUG6q3P2paWzSWrG_GEc5wkA"/>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Alex Rivera</p>
+<p class="text-xs text-slate-500 truncate">Pro Analyst</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer hover:text-primary">logout</span>
+</div>
+</aside>
+<!-- Main Content Panel -->
+<main class="ml-[280px] min-h-screen">
+<!-- Global Header Utility Bar (Intact) -->
+<header class="flex justify-between items-start py-8 px-10 w-full sticky top-0 z-40 bg-background/80 backdrop-blur-md">
+<div class="flex flex-col">
+<nav class="flex items-center gap-2 mb-2 text-xs font-bold text-slate-400 uppercase tracking-widest">
+<span>Home</span>
+<span class="text-[10px] opacity-50">/</span>
+<a class="hover:text-primary transition-colors" href="#">Image Sets</a>
+<span class="text-[10px] opacity-50">/</span>
+<span class="text-slate-600">Autonomous Urban Nav</span>
+</nav>
+<h2 class="text-5xl font-black tracking-tight text-slate-900 leading-tight">Autonomous Urban Nav</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-primary rounded-full border-2 border-background"></span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+</header>
+<div class="px-10 pb-12 flex flex-col gap-8">
+<!-- Tab Navigation (Updated: Images Active) -->
+<div class="flex items-center gap-8 border-b border-slate-200/50">
+<button class="pb-4 text-sm font-semibold text-slate-400 hover:text-slate-600 transition-all">Overview</button>
+<button class="pb-4 text-sm font-bold text-primary border-b-2 border-primary transition-all">Images</button>
+<button class="pb-4 text-sm font-semibold text-slate-400 hover:text-slate-600 transition-all">Settings</button>
+</div>
+<!-- Images Tab Content Area -->
+<div class="flex flex-col gap-8">
+<!-- Compact Upload Zone & Queue -->
+<div class="flex flex-col gap-4">
+<div class="w-full bg-slate-100/50 border-2 border-dashed border-slate-300 rounded-xl py-6 px-10 flex items-center justify-between transition-colors hover:bg-slate-100">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 text-3xl">cloud_upload</span>
+<div>
+<p class="text-sm font-bold text-slate-900">Drag and drop images to upload</p>
+<p class="text-xs text-slate-400 font-medium tracking-tight">Maximum image size: 1MB</p>
+</div>
+</div>
+<button class="px-5 py-2 bg-white text-slate-600 text-xs font-bold rounded-lg border border-slate-200 hover:bg-slate-50 transition-all">Select Files</button>
+</div>
+<!-- Upload Queue Item -->
+<div class="bg-white p-4 rounded-xl shadow-sm flex items-center gap-6">
+<div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400 text-lg">image</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1.5">
+<span class="text-xs font-bold text-slate-700">IS_frame_104.jpg</span>
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase">75%</span>
+</div>
+<div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full benchmark-pulse transition-all duration-300" style="width: 75%"></div>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-lg cursor-pointer hover:text-red-500">cancel</span>
+</div>
+</div>
+<!-- Search Bar Area -->
+<div class="grid grid-cols-12 gap-8 mb-6">
+<div class="col-span-12 lg:col-span-8">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors text-[20px]">search</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3 bg-transparent border border-slate-200 rounded-xl text-sm font-medium placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="Search images by filename..." type="text"/>
+</div>
+</div>
+</div><div class="grid grid-cols-12 gap-8 relative items-start">
+<!-- Asset Grid Column -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-8">
+<div class="grid grid-cols-5 gap-4"><!-- Row 1 -->
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Urban Road" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALbNthrx6WiPlsBn2EJWc-tOqkS2TspJays5hH_juaGzvDqZZwR1QoDSY631f6xIL9XrQS6z880A7Htaq6GW7edMelZknCFvUnsTabRT3X2xUgqxAsW7S8emR1J4FerJQPe2zmCe_FjoQjeatFDSW1jbmW6qEmWP2vpc74lmXezPbpakDteBe-5-58pxqQbaGy74dJib5SYjg4HjkcFZb1Rd_23c_p1cfDL9HBeFH1wMCkHBmLGqee_cFTtc_PNvyh0l3jpnWJMZU"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Traffic Lights" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPXY6VlD5bdTz8UPpcPvNdfoFR29wkf9G2t0kqAORAyUaVsntDP0SKfBCvLW7s5YRW4SLR8drigmriFhXvtpOtW16Fxe9RmRiRmq56ELmEeyggPPceFvnrLWa5qo9miPWYWMBevKcsuyDzDDigXZTEd72I_dHdWWIqe69iaT5cM_K7s53WqmSps73ZwYEvEWTW3T5lmTItyIjA4x8s4OA-zIK5KKEnDKgRFitHF5yrjMn4e3DK19tov5z1U9ala66VNEMNR-AW3m8"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 ring-2 ring-primary ring-offset-2 cursor-pointer">
+<img alt="City Street" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs52V4Q2YIawUkOjFyDR5W6t9TJ4KnP4_Qn_LAAR7-uqC8_lyl8k1B5U6QCUQ-P7oKfoFo98pxJR75oiV3dJl5tWYFaJZ_V6e4iIrvFLBB8yIeXthime9Z0UZ7s4lGaTIQKeOwdmzzXUcT91C2-fb0RQIltXQECTKyn-m6gTQQD7Y7PTIZpP4HU7vzfc8tWKZzDtg3qTM8fRMERn3iMRwjnCYRN_kRDeosJZHRGTF2sqLc0RDqWfTfXJrpIcOtdjx0-qL2SYryDQs"/>
+<div class="absolute top-2 right-2 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Crosswalk" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN_-KIjLF1WKNbQBCgghE6y6ZTczNUeMK-t5ts3PcK-77jBXlzrvh74vjeZI9e8DV0gfzVdunZ2d0mY_-3yS8uGyJvgKME4hz7ts3Re4nJQcv7KM8BwJ4kyIXbn2xG3yS9Y-1NUgHqybEJZXsgiz5BDDUD35RAQk7CeF3By829oHJ0jZ-O-hoWehIuHALuQtXUfyrn6Ym7u4A1yLfMlRYROsjCIseB9J8RbMGnqmJS06Clvet9hH9yHvw6ovX1C9-HPatiEpAkjcU"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Intersection" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlQsZwDmla78TcjyeoIcFhwNJlOZWQK6B6FY_BMKvBjkwzVT04mtXkez53HZIij4VH76i0twDAK9Dt7qSqyhp_9G9c_jlGXS6nRWXrsujDg87Z_JoSmPvgv9bnirXmWKnUsR0fAt71c-Hn-JxCwjEazn8imoYNis00Xa_lLlASidakBc5FHdngCf9NJP3iT9AOeXBecN1RebtifJuWQOngWLWGR67LNi6J77eT9ia6203KwbUUL0WGG5PeLGfKCesTAcNdPK8JdWQ"/>
+</div>
+<!-- Row 2 -->
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="City View" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNtDyT_fvuHjv_YH2OgJ9Ss49TzDag67IVPB7LvGmDJrll2gw0mcJJF9Ox_L7qAu7WewITgLA-Upfz2z4oQ2a2sItZ2_ZGglmR_NOI2hqta2TMx0eQqBjtmwy5M4eO-QLeil2dhhugQbKYjR-N74OQ8CKeW4UpVQdyCNQuehu3zF8K-ypLCK2sT0a8AW1UGdTXWN2-M3Z7K1Kx6415tzhdvpb6V90zDxJcmqXX25P3a3IL80CntsLoKRNn3CJx1cnj9UFPs-omXX8"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Downtown" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK_2Hnzq88oCJRiKdUQ1T6Q3KW_oQj4TFi8pArQ4_N8vHPVciSTgYkubTQnwZ_70W6E-6KGEoKAAfBnJheHH7eyM8QDYdkKPFBxBUvlmCyKExKwJnx1_o9K_dy4mE0fJyUbV_sGXinQ_mUVBhcte4D6DVHWyS3lt-0u98jJY2lp-uGVZ6JbLudufdxgHDqMeZfGnDXNOB0KTFHB8TmLd46C5QRSGidR_L_P1mdmizyy4PXXFui5dVKsmYzXO7nGICTLzozvsszTYk"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Night Drive" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Ioj5xzCPcnBKCuz2RpMzTxce5is9-0pAgFidogPXgBJgJ31k0ZMQAxccVZE-l1LAp16cCS9qBHko06ui3UtvCoVknfeUQkdaitXOqleCi5Y_2TolQUepPXP57iGLSwOlA7aNqEUMGtQXP4q9o5C3Tf71-akErn5qMD5XhS7HIQPmDHXkrrvszwuq4-enaSkeCWzqjqH-iCWeo8Wg5zvJoSdye6VR3oe70siPT9Z-qx9LOXvVK7RKp-BB6_Bib4qC4KCZfkYTgPI"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Perspective" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgWMENFz4xVgTc4_rGoMPjEeUY6KkP1qacsflZzpjDi5eEY0vzxu3wyXPb7ljO3mt4t8xIYtgmpr7xfjFAtT2vl1KottFh5uSfV8D0Ps0yB6_M2rDJ6vhs2VA42yLeMr6HrRo7rALFKvgfm3kvUNgWmysuY6sBALBSRiKL2QN3seMs1xGyrBGOQihJLVHRxMd24_3c-RQDmiTt2nhxn2_80-OQ0MD8JaHqPUu5OW_PSYD-JSLu6gVfH5P0qrJRa6ByFcZcMOUz7U"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Skyline" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-0oUTb76JfUfl1W5jGrOfmE07LJcQeTxMX_okQm0exAl70NzSIRAMQEyhBWCjsrA3wDXfSUEem39yYLcGD3GoUY0cRoto1gsMVPUW1Qqu9hFbxdH8rZTy8zfdUcca0DJigeEL2jiKxrainuGDpw705TWPfqZ1rBxvXTlRGH_dLamMl7uLi7r44M7TU2rusf2kSRD7DT9C6ZqhmyOGAaufAEHeh7ZBtXFoesaiNVOuZWp55AMUAVzg9K79Q6BZhTYSRfQkyKHVKmk"/>
+</div>
+<!-- Row 3 -->
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Asset 11" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALbNthrx6WiPlsBn2EJWc-tOqkS2TspJays5hH_juaGzvDqZZwR1QoDSY631f6xIL9XrQS6z880A7Htaq6GW7edMelZknCFvUnsTabRT3X2xUgqxAsW7S8emR1J4FerJQPe2zmCe_FjoQjeatFDSW1jbmW6qEmWP2vpc74lmXezPbpakDteBe-5-58pxqQbaGy74dJib5SYjg4HjkcFZb1Rd_23c_p1cfDL9HBeFH1wMCkHBmLGqee_cFTtc_PNvyh0l3jpnWJMZU"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Asset 12" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPXY6VlD5bdTz8UPpcPvNdfoFR29wkf9G2t0kqAORAyUaVsntDP0SKfBCvLW7s5YRW4SLR8drigmriFhXvtpOtW16Fxe9RmRiRmq56ELmEeyggPPceFvnrLWa5qo9miPWYWMBevKcsuyDzDDigXZTEd72I_dHdWWIqe69iaT5cM_K7s53WqmSps73ZwYEvEWTW3T5lmTItyIjA4x8s4OA-zIK5KKEnDKgRFitHF5yrjMn4e3DK19tov5z1U9ala66VNEMNR-AW3m8"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Asset 13" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN_-KIjLF1WKNbQBCgghE6y6ZTczNUeMK-t5ts3PcK-77jBXlzrvh74vjeZI9e8DV0gfzVdunZ2d0mY_-3yS8uGyJvgKME4hz7ts3Re4nJQcv7KM8BwJ4kyIXbn2xG3yS9Y-1NUgHqybEJZXsgiz5BDDUD35RAQk7CeF3By829oHJ0jZ-O-hoWehIuHALuQtXUfyrn6Ym7u4A1yLfMlRYROsjCIseB9J8RbMGnqmJS06Clvet9hH9yHvw6ovX1C9-HPatiEpAkjcU"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Asset 14" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlQsZwDmla78TcjyeoIcFhwNJlOZWQK6B6FY_BMKvBjkwzVT04mtXkez53HZIij4VH76i0twDAK9Dt7qSqyhp_9G9c_jlGXS6nRWXrsujDg87Z_JoSmPvgv9bnirXmWKnUsR0fAt71c-Hn-JxCwjEazn8imoYNis00Xa_lLlASidakBc5FHdngCf9NJP3iT9AOeXBecN1RebtifJuWQOngWLWGR67LNi6J77eT9ia6203KwbUUL0WGG5PeLGfKCesTAcNdPK8JdWQ"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Asset 15" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNtDyT_fvuHjv_YH2OgJ9Ss49TzDag67IVPB7LvGmDJrll2gw0mcJJF9Ox_L7qAu7WewITgLA-Upfz2z4oQ2a2sItZ2_ZGglmR_NOI2hqta2TMx0eQqBjtmwy5M4eO-QLeil2dhhugQbKYjR-N74OQ8CKeW4UpVQdyCNQuehu3zF8K-ypLCK2sT0a8AW1UGdTXWN2-M3Z7K1Kx6415tzhdvpb6V90zDxJcmqXX25P3a3IL80CntsLoKRNn3CJx1cnj9UFPs-omXX8"/>
+</div>
+<!-- Row 4 -->
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Asset 16" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK_2Hnzq88oCJRiKdUQ1T6Q3KW_oQj4TFi8pArQ4_N8vHPVciSTgYkubTQnwZ_70W6E-6KGEoKAAfBnJheHH7eyM8QDYdkKPFBxBUvlmCyKExKwJnx1_o9K_dy4mE0fJyUbV_sGXinQ_mUVBhcte4D6DVHWyS3lt-0u98jJY2lp-uGVZ6JbLudufdxgHDqMeZfGnDXNOB0KTFHB8TmLd46C5QRSGidR_L_P1mdmizyy4PXXFui5dVKsmYzXO7nGICTLzozvsszTYk"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Asset 17" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2Ioj5xzCPcnBKCuz2RpMzTxce5is9-0pAgFidogPXgBJgJ31k0ZMQAxccVZE-l1LAp16cCS9qBHko06ui3UtvCoVknfeUQkdaitXOqleCi5Y_2TolQUepPXP57iGLSwOlA7aNqEUMGtQXP4q9o5C3Tf71-akErn5qMD5XhS7HIQPmDHXkrrvszwuq4-enaSkeCWzqjqH-iCWeo8Wg5zvJoSdye6VR3oe70siPT9Z-qx9LOXvVK7RKp-BB6_Bib4qC4KCZfkYTgPI"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Asset 18" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgWMENFz4xVgTc4_rGoMPjEeUY6KkP1qacsflZzpjDi5eEY0vzxu3wyXPb7ljO3mt4t8xIYtgmpr7xfjFAtT2vl1KottFh5uSfV8D0Ps0yB6_M2rDJ6vhs2VA42yLeMr6HrRo7rALFKvgfm3kvUNgWmysuY6sBALBSRiKL2QN3seMs1xGyrBGOQihJLVHRxMd24_3c-RQDmiTt2nhxn2_80-OQ0MD8JaHqPUu5OW_PSYD-JSLu6gVfH5P0qrJRa6ByFcZcMOUz7U"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Asset 19" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-0oUTb76JfUfl1W5jGrOfmE07LJcQeTxMX_okQm0exAl70NzSIRAMQEyhBWCjsrA3wDXfSUEem39yYLcGD3GoUY0cRoto1gsMVPUW1Qqu9hFbxdH8rZTy8zfdUcca0DJigeEL2jiKxrainuGDpw705TWPfqZ1rBxvXTlRGH_dLamMl7uLi7r44M7TU2rusf2kSRD7DT9C6ZqhmyOGAaufAEHeh7ZBtXFoesaiNVOuZWp55AMUAVzg9K79Q6BZhTYSRfQkyKHVKmk"/>
+</div>
+<div class="group relative aspect-square rounded-2xl overflow-hidden bg-slate-200 cursor-pointer">
+<img alt="Asset 20" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALbNthrx6WiPlsBn2EJWc-tOqkS2TspJays5hH_juaGzvDqZZwR1QoDSY631f6xIL9XrQS6z880A7Htaq6GW7edMelZknCFvUnsTabRT3X2xUgqxAsW7S8emR1J4FerJQPe2zmCe_FjoQjeatFDSW1jbmW6qEmWP2vpc74lmXezPbpakDteBe-5-58pxqQbaGy74dJib5SYjg4HjkcFZb1Rd_23c_p1cfDL9HBeFH1wMCkHBmLGqee_cFTtc_PNvyh0l3jpnWJMZU"/>
+</div></div>
+<!-- Pagination -->
+<div class="flex items-center justify-between bg-white px-6 py-4 rounded-xl shadow-sm mt-4">
+<span class="text-xs font-bold text-slate-400">Showing 20 of 12.4k assets</span>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center text-slate-300 hover:text-slate-600">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-white text-[10px] font-black">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-slate-50 text-slate-600 text-[10px] font-black">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-slate-50 text-slate-600 text-[10px] font-black">3</button>
+<span class="px-1 text-slate-300">...</span>
+<button class="w-8 h-8 flex items-center justify-center text-slate-300 hover:text-slate-600">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Metadata Side Sheet -->
+<div class="col-span-12 lg:col-span-4 sticky top-32">
+<div class="bg-white rounded-2xl p-6 shadow-xl shadow-slate-200/50 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xs font-black text-slate-400 uppercase tracking-widest">Asset Details</h3>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-50 text-slate-400 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-red-50 text-slate-400 hover:text-red-500 transition-all">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<div class="aspect-video rounded-xl bg-slate-50 overflow-hidden">
+<img alt="Selected Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABOs5Nop9TrAJQDwn2vPkl9S7jwHs4D8nQTPMHkMeDQr5-9V2SFvHFZYShrZu56GnnyZG_rcAhtm11jXGDwSce7UYD6nbvKhFMX78LKmWVl7ZSYiLbusAEoWDfECMevEYtEadSCRnRU1mPxm7izEusH7nIBW1XlBJbM93s8e0DXN9Hnm6TXHqBgHC-xuEmbi2lMrMAjHlr-EL9_kvZQKIcXmgull0YAWe3I5OtEXWUIyUVjk4ra_WBaLAK4oNCPOxPAw7_gUU15-o"/>
+</div>
+<div class="space-y-5">
+<div>
+<p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Filename</p>
+<p class="text-sm font-bold text-slate-900 truncate">IS-782_frame_003.jpg</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Dimensions</p>
+<p class="text-sm font-bold text-slate-900">1024 x 768</p>
+</div>
+<div>
+<p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Size</p>
+<p class="text-sm font-bold text-slate-900">842 KB</p>
+</div>
+</div>
+<div>
+<p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Classification Tags</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full">Urban</span>
+<span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full">Nav</span>
+<span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full">Daylight</span>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-slate-50 flex flex-col gap-3">
+<button class="w-full py-3 bg-primary text-white text-xs font-bold rounded-xl shadow-lg shadow-orange-500/20 hover:bg-orange-600 transition-all flex items-center justify-center gap-2 uppercase tracking-widest">
+                                    Edit Metadata
+                                </button>
+<button class="w-full py-3 bg-slate-50 text-slate-400 text-xs font-bold rounded-xl hover:bg-slate-100 transition-all uppercase tracking-widest">
+                                    Copy Resource URL
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,8 +1,12 @@
-# Specification: Create Image Test Set
-
 ## Visual Assets
 - **Interactive Layout:** [create-light.html](file:///d:/dev/experimental-ai-benchmarker/docs/03-modules/02-image-sets-management/03-create/stitch_ui/create-light.html)
 - **High-Resolution Preview:** [create-light.png](file:///d:/dev/experimental-ai-benchmarker/docs/03-modules/02-image-sets-management/03-create/stitch_ui/create-light.png)
+- **Filled State Layout:** [create-filled-light.html](file:///d:/dev/experimental-ai-benchmarker/docs/03-modules/02-image-sets-management/03-create/stitch_ui/create-filled-light.html)
+- **Filled State Preview:** [create-filled-light.png](file:///d:/dev/experimental-ai-benchmarker/docs/03-modules/02-image-sets-management/03-create/stitch_ui/create-filled-light.png)
+- **Loading State Layout:** [create-loading-light.html](file:///d:/dev/experimental-ai-benchmarker/docs/03-modules/02-image-sets-management/03-create/stitch_ui/create-loading-light.html)
+- **Loading State Preview:** [create-loading-light.png](file:///d:/dev/experimental-ai-benchmarker/docs/03-modules/02-image-sets-management/03-create/stitch_ui/create-loading-light.png)
+- **Success State Layout:** [create-success-light.html](file:///d:/dev/experimental-ai-benchmarker/docs/03-modules/02-image-sets-management/03-create/stitch_ui/create-success-light.html)
+- **Success State Preview:** [create-success-light.png](file:///d:/dev/experimental-ai-benchmarker/docs/03-modules/02-image-sets-management/03-create/stitch_ui/create-success-light.png)
 
 ## Overview
 A streamlined entry form for initializing new Image Test Sets. This page acts as the first step in the data ingestion pipeline, focusing on core metadata before redirecting to the multi-tab management workspace.
@@ -13,7 +17,7 @@ A streamlined entry form for initializing new Image Test Sets. This page acts as
 - **Breadcrumb:** `Home` > `Image Sets` > `Create`
 - **Tone:** Kinetic Intelligence (Slate 50/950 foundation, Vivid Orange accents, No-Line rule).
 
-## Functional Components (Creation Form)
+## Functional Components
 
 ### 1. Basic Information
 - **Name Field:** Text input for the set's display name (Required).
@@ -27,9 +31,6 @@ A streamlined entry form for initializing new Image Test Sets. This page acts as
 - **Visibility Toggle:** Private (Owner-only) vs. Global (Shared with team).
 - **Encryption Opt-in:** Toggle for high-security data handling.
 
-## Navigation & Actions
-- **Primary CTA:** "Create & Upload Assets" (Proceeds to the **Details -> Upload** tab).
-- **Secondary CTA:** "Cancel" (Redirects back to the **Image Sets Listing** page).
-
-## Transition Rules
-- Upon successful creation, the user is navigated to the **Details** page for the newly created set, with the **Upload** tab active by default to encourage immediate asset population.
+## Interaction Rules
+- **Primary CTA:** Clicking "Create & Upload Assets" navigates the user to the **Details** page for the newly created set, with the **Images** tab active by default to encourage immediate asset population via the drag-and-drop zone.
+- **Secondary CTA:** Clicking "Cancel" redirects back to the **Image Sets Listing** page.
