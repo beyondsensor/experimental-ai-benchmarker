@@ -145,7 +145,7 @@
           "name": "Server Details (Tabbed)",
           "screenId": "2ad0259b70954231bff41409331129c4",
           "screenIdTelemetry": "6dd81abc46da4534b1f549b437bb4f3a",
-          "screenIdEndpoint": "1c7813dab1444183bb3c737f86209fbc",
+          "screenIdEndpoint": "70d8ceeb6e084b1cb15d620400cc749f",
           "path": "03-server-management/02-details/specs.md",
           "status": "GENERATED",
           "files": {

@@ -1,181 +1,51 @@
-<!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kinetic AI | Primary Local RTX</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#EA580C",
-                        "surface": "#FFFFFF",
-                        "background": "#F8FAFC",
-                    },
-                    fontFamily: {
-                        "headline": ["Inter", "sans-serif"],
-                        "body": ["Inter", "sans-serif"],
-                        "label": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "1.5rem", "3xl": "24px", "full": "9999px"},
-                },
-            },
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contribution.usercontent.com - Coming Soon</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
-    </script>
-<style>
-        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .ghost-input {
-            border: 1px solid rgba(0,0,0,0.1);
-            transition: all 0.2s ease;
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 600px;
         }
-        .ghost-input:focus {
-            border-color: transparent;
-            box-shadow: 0 4px 0 -2px #EA580C;
-            outline: none;
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            word-break: break-word;
+        }
+        p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .emoji {
+            font-size: 4em;
+            margin-bottom: 20px;
         }
     </style>
 </head>
-<body class="text-slate-900 antialiased">
-<!-- Fixed 280px Sidebar -->
-<aside class="fixed left-0 top-0 h-full w-[280px] flex flex-col p-6 gap-6 z-50 border-r border-slate-200 bg-slate-50">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-orange-500/20">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
-</div>
-<div>
-<h1 class="text-2xl font-black text-primary tracking-tighter uppercase">Kinetic AI</h1>
-<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Intelligence Engine</p>
-</div>
-</div>
-<nav class="flex flex-col gap-2 flex-1">
-<div class="flex flex-col gap-1">
-<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Platform</p>
-<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
-<span class="material-symbols-outlined text-[20px]">science</span>
-                    Tests
-                </a>
-</div>
-<div class="flex flex-col gap-1 mt-4">
-<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Data Management</p>
-<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
-<span class="material-symbols-outlined text-[20px]">image_aspect_ratio</span>
-                    Image Sets
-                </a>
-<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
-<span class="material-symbols-outlined text-[20px]">assignment</span>
-                    Test Plan
-                </a>
-<a class="flex items-center gap-3 px-4 py-2.5 bg-white text-primary rounded-xl shadow-sm font-semibold text-sm transition-all border border-slate-200/50" href="#">
-<span class="material-symbols-outlined text-[20px]">memory</span>
-                    Compute
-                </a>
-</div>
-<div class="flex flex-col gap-1 mt-4">
-<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Account</p>
-<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
-<span class="material-symbols-outlined text-[20px]">settings</span>
-                    Settings
-                </a>
-<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
-<span class="material-symbols-outlined text-[20px]">payments</span>
-                    Billing
-                </a>
-<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
-<span class="material-symbols-outlined text-[20px]">key</span>
-                    API Keys
-                </a>
-<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
-<span class="material-symbols-outlined text-[20px]">webhook</span>
-                    Web Hooks
-                </a>
-</div>
-</nav>
-<div class="mt-auto p-4 bg-slate-200/50 rounded-xl flex items-center gap-3">
-<img alt="Alex Rivera" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqXzEDwL_a-ZlZyMH6tr_1mwWRh-M20C7S5iyHrnCG3rtFtTSX_GxYM8IHuLSKui25jL-udaSSCRE9VViudtnP-9flxbVDf5ZWR2kpFy_lXaXiuJDPLmaujfPn1gwoG9XAi3_YSmcN-8RgsFIKmlvDhaExHVnbTo7uPqLppxPzlWLBhSSXeI172OzDR4BK2Mc-T0tmRAHcd4v6HV8GpDHNnjHKqbzuMTcDhgLd4YdZeAT0Wy-QV3PgUG6q3P2paWzSWrG_GEc5wkA"/>
-<div class="flex-1 min-w-0">
-<p class="text-sm font-bold truncate">Alex Rivera</p>
-<p class="text-xs text-slate-500 truncate">Pro Analyst</p>
-</div>
-<span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer hover:text-primary">logout</span>
-</div>
-</aside>
-<!-- Main Content Panel -->
-<main class="ml-[280px] min-h-screen bg-slate-50">
-<!-- Global Header Utility Bar -->
-<header class="flex justify-between items-start py-8 px-10 w-full sticky top-0 z-40 bg-slate-50/80 backdrop-blur-md">
-<div class="flex-1">
-<nav class="flex items-center gap-2 mb-2 text-xs font-bold text-slate-400 uppercase tracking-widest">
-<span>Home</span>
-<span class="text-[10px] opacity-50">/</span>
-<a class="hover:text-primary transition-colors" href="#">Compute</a>
-<span class="text-[10px] opacity-50">/</span>
-<span class="text-slate-600">Primary Local RTX</span>
-</nav>
-<div class="flex items-center gap-4">
-<h2 class="text-5xl font-black tracking-tight text-slate-900 leading-tight">Primary Local RTX</h2>
-</div>
-<p class="mt-2 text-slate-500 font-medium">Endpoint: http://192.***.***.100:11434</p>
-</div>
-<div class="flex items-center gap-6">
-<div class="flex items-center gap-4">
-<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors relative">
-<span class="material-symbols-outlined">notifications</span>
-<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-primary rounded-full border-2 border-slate-50"></span>
-</button>
-<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined">account_circle</span>
-</button>
-<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
-<span class="material-symbols-outlined">dark_mode</span>
-</button>
-</div>
-</div>
-</header>
-<div class="px-10 pb-20 flex flex-col gap-0 max-w-6xl">
-<!-- Tab Navigation Bar -->
-<div class="flex items-center gap-8 mb-8 border-b border-slate-200">
-<button class="pb-4 text-sm font-bold text-slate-400 hover:text-slate-600 transition-colors">Model Inventory</button>
-<button class="pb-4 text-sm font-bold text-slate-400 hover:text-slate-600 transition-colors">Hardware &amp; Telemetry</button>
-<button class="pb-4 text-sm font-bold text-primary border-b-2 border-primary">Endpoint Configuration</button>
-</div>
-<!-- Configuration Content Area -->
-<div class="w-full">
-<div class="bg-white rounded-3xl shadow-sm p-10 max-w-2xl mx-auto">
-<h3 class="text-2xl font-bold text-slate-900 mb-8">Connection Details</h3>
-<form class="flex flex-col gap-8">
-<div class="flex flex-col gap-2">
-<label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Node Name</label>
-<input class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 font-bold text-slate-900 focus:ring-2 focus:ring-primary/20 transition-all" type="text" value="Primary Local RTX"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Base URL</label>
-<input class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 font-bold text-slate-900 focus:ring-2 focus:ring-primary/20 transition-all" type="text" value="http://192.168.1.100:11434"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">API Key / Token</label>
-<div class="relative">
-<input class="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 font-bold text-slate-900 focus:ring-2 focus:ring-primary/20 transition-all pr-16" type="password" value="********************************"/>
-<button class="absolute right-4 top-1/2 -translate-y-1/2 text-[10px] font-black text-primary uppercase tracking-widest hover:opacity-70 transition-opacity" type="button">Show</button>
-</div>
-</div>
-<div class="flex items-center justify-end gap-4 mt-4">
-<button class="px-6 py-3.5 rounded-2xl border-2 border-slate-100 text-slate-600 text-sm font-bold hover:bg-slate-50 transition-colors" type="button">
-                        Test Connection
-                    </button>
-<button class="px-8 py-3.5 bg-primary text-white rounded-2xl text-sm font-bold hover:opacity-90 transition-all shadow-lg shadow-orange-500/20" type="button">
-                        Save Changes
-                    </button>
-</div>
-</form>
-</div>
-</div>
-</div>
-</main>
-</body></html>
+<body>
+    <div class="container">
+        <div class="emoji">🚀</div>
+        <h1>contribution.usercontent.com</h1>
+        <p>This domain is coming soon.</p>
+    </div>
+</body>
+</html>
