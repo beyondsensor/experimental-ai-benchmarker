@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic AI | Compute Nodes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#EA580C",
+                        "surface": "#FFFFFF",
+                        "background": "#F8FAFC",
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+        }
+        .vivid-orange-gradient {
+            background: linear-gradient(90deg, #EA580C 0%, #FB923C 100%);
+            box-shadow: 0 0 12px rgba(234, 88, 12, 0.3);
+        }
+    </style>
+</head>
+<body class="text-slate-900 antialiased overflow-hidden">
+<!-- Overlay for darkening the background -->
+<div class="fixed inset-0 bg-slate-900/40 z-[60] backdrop-blur-[2px]"></div>
+<!-- Side Sheet -->
+<aside class="fixed right-0 top-0 h-full w-[33%] bg-white z-[70] shadow-[-20px_0_40px_rgba(0,0,0,0.1)] rounded-l-[24px] flex flex-col animate-in slide-in-from-right duration-300">
+<!-- Sheet Header -->
+<div class="p-8 pb-6 relative">
+<button class="absolute right-6 top-6 w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="flex items-center gap-3 mb-2">
+<h3 class="text-2xl font-black tracking-tight text-slate-900">Primary Local RTX</h3>
+<span class="px-2.5 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-black uppercase tracking-wider rounded-full border border-emerald-100">Online</span>
+</div>
+<code class="text-xs font-mono text-slate-400 block mb-6">http://192.***.***.100:11434</code>
+<button class="w-full py-3 bg-primary text-white rounded-xl font-bold text-sm shadow-lg shadow-orange-500/20 hover:bg-[#D44E0A] transition-all">
+                Edit Configuration
+            </button>
+</div>
+<div class="flex-1 overflow-y-auto no-scrollbar px-8 pb-10 flex flex-col gap-8">
+<!-- Section A: Hardware Profile -->
+<section>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Hardware Profile</p>
+<div class="bg-slate-50 p-5 rounded-[24px] flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px] w-5 h-5 flex items-center justify-center">developer_board</span>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">CPU</p>
+<p class="text-sm font-bold text-slate-900">AMD Ryzen 9</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px] w-5 h-5 flex items-center justify-center">developer_board</span>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">RAM</p>
+<p class="text-sm font-bold text-slate-900">64GB DDR5</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px] w-5 h-5 flex items-center justify-center">developer_board</span>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">GPU</p>
+<p class="text-sm font-bold text-slate-900">1x NVIDIA RTX 4090 24GB</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section B: Telemetry -->
+<section>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Telemetry</p>
+<div class="flex flex-col gap-5">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold text-slate-600">RAM Load</span>
+<span class="text-xs font-black text-primary">45%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full vivid-orange-gradient" style="width: 45%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="text-xs font-bold text-slate-600">VRAM Load</span>
+<span class="text-xs font-black text-primary">80%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full vivid-orange-gradient" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section C: Installed Models -->
+<section>
+<div class="flex justify-between items-center mb-4">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Installed Models</p>
+<span class="text-[10px] font-black text-primary uppercase">2 ACTIVE</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Model 1 -->
+<div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">model_training</span>
+<div>
+<p class="text-sm font-bold text-slate-900">Llama-3 (8B)</p>
+<span class="text-[10px] font-bold text-emerald-500 uppercase">Ready</span>
+</div>
+</div>
+<button class="text-slate-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+<!-- Model 2 -->
+<div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">model_training</span>
+<div>
+<p class="text-sm font-bold text-slate-900">Mistral (7B)</p>
+<span class="text-[10px] font-bold text-emerald-500 uppercase">Ready</span>
+</div>
+</div>
+<button class="text-slate-300 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Action -->
+<div class="relative mb-3 group transition-all duration-300">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg transition-colors group-focus-within:text-primary">terminal</span>
+<input class="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-[24px] text-sm focus:ring-2 focus:ring-primary/10 focus:border-primary/50 placeholder:text-slate-400 transition-all outline-none shadow-sm" placeholder="e.g. llama3:8b or mistral" type="text"/>
+</div><button class="flex items-center justify-center gap-2 py-3 border-2 border-dashed border-slate-200 rounded-xl text-slate-400 font-bold text-sm hover:border-primary/40 hover:text-primary transition-all group">
+<span class="material-symbols-outlined text-lg group-hover:scale-110 transition-transform">download</span>
+                Pull New Model
+            </button>
+</div>
+</aside>
+<!-- Fixed 280px Sidebar -->
+<aside class="fixed left-0 top-0 h-full w-[280px] flex flex-col p-6 gap-6 z-50 border-r border-slate-200 bg-slate-50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-orange-500/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h1 class="text-2xl font-black text-primary tracking-tighter uppercase">Kinetic AI</h1>
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Intelligence Engine</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 flex-1">
+<!-- PLATFORM GROUP -->
+<div class="flex flex-col gap-1">
+<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Platform</p>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">science</span>
+                    Tests
+                </a>
+</div>
+<!-- DATA MANAGEMENT GROUP -->
+<div class="flex flex-col gap-1 mt-4">
+<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Data Management</p>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">image_aspect_ratio</span>
+                    Image Sets
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+                    Test Plan
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 bg-white text-primary rounded-xl shadow-sm font-semibold text-sm transition-all border border-slate-200/50" href="#">
+<span class="material-symbols-outlined text-[20px]">memory</span>
+                    Compute
+                </a>
+</div>
+<!-- ACCOUNT GROUP -->
+<div class="flex flex-col gap-1 mt-4">
+<p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Account</p>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+                    Billing
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">key</span>
+                    API Keys
+                </a>
+<a class="flex items-center gap-3 px-4 py-2.5 text-slate-500 hover:text-primary hover:bg-white/50 transition-all font-medium text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">webhook</span>
+                    Web Hooks
+                </a>
+</div>
+</nav>
+<div class="mt-auto p-4 bg-slate-200/50 rounded-xl flex items-center gap-3">
+<img alt="Alex Rivera" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqXzEDwL_a-ZlZyMH6tr_1mwWRh-M20C7S5iyHrnCG3rtFtTSX_GxYM8IHuLSKui25jL-udaSSCRE9VViudtnP-9flxbVDf5ZWR2kpFy_lXaXiuJDPLmaujfPn1gwoG9XAi3_YSmcN-8RgsFIKmlvDhaExHVnbTo7uPqLppxPzlWLBhSSXeI172OzDR4BK2Mc-T0tmRAHcd4v6HV8GpDHNnjHKqbzuMTcDhgLd4YdZeAT0Wy-QV3PgUG6q3P2paWzSWrG_GEc5wkA"/>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Alex Rivera</p>
+<p class="text-xs text-slate-500 truncate">Pro Analyst</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-lg cursor-pointer hover:text-primary">logout</span>
+</div>
+</aside>
+<!-- Main Content Panel -->
+<main class="ml-[280px] min-h-screen">
+<!-- Header -->
+<header class="flex justify-between items-start py-8 px-10 w-full sticky top-0 z-40 bg-background/80 backdrop-blur-md">
+<div class="flex flex-col">
+<nav class="flex items-center gap-2 mb-2 text-xs font-bold text-slate-400 uppercase tracking-widest">
+<span>Home</span>
+<span class="text-[10px] opacity-50">/</span>
+<span class="text-slate-600">Compute</span>
+</nav>
+<h2 class="text-3xl font-black tracking-tight text-slate-900">Compute Nodes</h2>
+<p class="text-sm text-slate-500 font-medium">Manage your connected Ollama instances for benchmark execution.</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-primary rounded-full border-2 border-background"></span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+</header>
+<div class="px-10 pb-12 flex flex-col gap-6">
+<div class="flex flex-col gap-4">
+<div class="flex justify-end">
+<button class="flex items-center gap-2 px-6 py-2.5 bg-primary text-white rounded-xl font-bold text-sm shadow-lg shadow-orange-500/20 hover:bg-[#D44E0A] transition-all">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add Node
+                    </button>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/10 focus:border-primary/50 placeholder:text-slate-400 transition-all" placeholder="Search compute nodes by name or endpoint..." type="text"/>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-200/60">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-slate-50">
+<th class="px-8 text-left text-[10px] font-black text-slate-400 uppercase tracking-widest py-3">Server Name</th>
+<th class="px-8 text-left text-[10px] font-black text-slate-400 uppercase tracking-widest py-3">Endpoint URL</th>
+<th class="px-8 text-left text-[10px] font-black text-slate-400 uppercase tracking-widest py-3">Hardware Pipeline</th>
+<th class="px-8 text-left text-[10px] font-black text-slate-400 uppercase tracking-widest py-3">Status</th>
+<th class="px-8 text-left text-[10px] font-black text-slate-400 uppercase tracking-widest py-3">Loaded Models</th>
+<th class="px-8 text-right text-[10px] font-black text-slate-400 uppercase tracking-widest py-3">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<!-- Row 1 -->
+<tr class="bg-white group hover:bg-slate-100/50 transition-colors">
+<td class="px-8 py-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[18px]">dns</span>
+</div>
+<p class="text-sm font-bold text-slate-900 group-hover:text-primary transition-colors">Primary Local RTX</p>
+</div>
+</td>
+<td class="px-8 py-3">
+<code class="text-[11px] font-mono bg-slate-50 px-2 py-1 rounded text-slate-600">http://192.***.***.100:11434</code>
+</td>
+<td class="px-8 py-3">
+<span class="text-xs font-medium text-slate-600">RTX 4090 • 64GB RAM</span>
+</td>
+<td class="px-8 py-3">
+<span class="px-2.5 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-black uppercase tracking-wider rounded-full border border-emerald-100">Online</span>
+</td>
+<td class="px-8 py-3"><span class="text-xs font-bold text-slate-600">2 Models</span></td>
+<td class="px-8 text-right py-3">
+<div class="flex items-center justify-end gap-1">
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-primary transition-colors" title="Ping">
+<span class="material-symbols-outlined text-[18px]">network_check</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-primary transition-colors" title="Manage">
+<span class="material-symbols-outlined text-[18px]">settings_input_component</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-red-500 transition-colors" title="Disconnect">
+<span class="material-symbols-outlined text-[18px]">link_off</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-slate-50 group hover:bg-slate-100/50 transition-colors">
+<td class="px-8 py-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[18px]">lan</span>
+</div>
+<p class="text-sm font-bold text-slate-900 group-hover:text-primary transition-colors">Office Network Node</p>
+</div>
+</td>
+<td class="px-8 py-3">
+<code class="text-[11px] font-mono bg-white border border-slate-100 px-2 py-1 rounded text-slate-600">http://***.***.*.**:11434</code>
+</td>
+<td class="px-8 py-3">
+<span class="text-xs font-medium text-slate-600">RTX 3080 • 32GB RAM</span>
+</td>
+<td class="px-8 py-3">
+<span class="px-2.5 py-1 bg-amber-50 text-amber-600 text-[10px] font-black uppercase tracking-wider rounded-full border border-amber-100">Processing</span>
+</td>
+<td class="px-8 py-3"><span class="text-xs font-bold text-slate-600">1 Model</span></td>
+<td class="px-8 text-right py-3">
+<div class="flex items-center justify-end gap-1">
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-primary transition-colors" title="Ping">
+<span class="material-symbols-outlined text-[18px]">network_check</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-primary transition-colors" title="Manage">
+<span class="material-symbols-outlined text-[18px]">settings_input_component</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-red-500 transition-colors" title="Disconnect">
+<span class="material-symbols-outlined text-[18px]">link_off</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-white group hover:bg-slate-100/50 transition-colors">
+<td class="px-8 py-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined text-[18px]">cloud</span>
+</div>
+<p class="text-sm font-bold text-slate-900 group-hover:text-primary transition-colors">Remote CPU Cluster</p>
+</div>
+</td>
+<td class="px-8 py-3">
+<code class="text-[11px] font-mono bg-slate-50 px-2 py-1 rounded text-slate-600">http://10.*.*.*:11434</code>
+</td>
+<td class="px-8 py-3">
+<span class="text-xs font-medium text-slate-600">Ryzen 9 • 128GB RAM</span>
+</td>
+<td class="px-8 py-3">
+<span class="px-2.5 py-1 bg-red-50 text-red-600 text-[10px] font-black uppercase tracking-wider rounded-full border border-red-100">Offline</span>
+</td>
+<td class="px-8 py-3"><span class="text-xs font-bold text-slate-400">0 Models</span></td>
+<td class="px-8 text-right py-3">
+<div class="flex items-center justify-end gap-1">
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-primary transition-colors" title="Ping">
+<span class="material-symbols-outlined text-[18px]">network_check</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-primary transition-colors" title="Manage">
+<span class="material-symbols-outlined text-[18px]">settings_input_component</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-red-500 transition-colors" title="Disconnect">
+<span class="material-symbols-outlined text-[18px]">link_off</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Footer -->
+<div class="px-8 py-4 border-t border-slate-100 flex items-center justify-between bg-white">
+<div class="flex items-center gap-4">
+<p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Rows per page</p>
+<select class="text-xs font-bold text-slate-600 bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 focus:ring-1 focus:ring-primary/20 outline-none transition-all cursor-pointer">
+<option selected="" value="10">10</option>
+<option value="30">30</option>
+<option value="50">50</option>
+</select>
+<span class="h-4 w-px bg-slate-200 mx-2"></span>
+<p class="text-xs font-medium text-slate-400">Showing <span class="text-slate-900 font-bold">1-3</span> of <span class="text-slate-900 font-bold">3</span> nodes</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center px-3 py-1.5 text-xs font-bold text-slate-400 opacity-50 cursor-not-allowed">Previous</button>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center text-xs font-black bg-primary text-white rounded-xl shadow-sm">1</button>
+</div>
+<button class="flex items-center px-3 py-1.5 text-xs font-bold text-slate-400 opacity-50 cursor-not-allowed">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

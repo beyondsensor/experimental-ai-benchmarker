@@ -105,7 +105,7 @@
           "screenId": "e5b076f705f641daa280865b48d88c7c",
           "screenIdFilled": "eef4b25c9af84706823805385d179a6b",
           "screenIdLoading": "4f33cbef574d47f2ba1ac9403dd0c8f5",
-          "screenIdSuccess": "045053b6d08a4b5193f19c92d70d1f5a",
+          "screenIdSuccess": "596e50510d064e43a6bb031dc9409d4a",
           "path": "02-image-sets-management/03-create/specs.md",
           "status": "GENERATED",
           "files": {
@@ -117,6 +117,55 @@
             "previewLoading": "02-image-sets-management/03-create/stitch_ui/create-loading-light.png",
             "layoutSuccess": "02-image-sets-management/03-create/stitch_ui/create-success-light.html",
             "previewSuccess": "02-image-sets-management/03-create/stitch_ui/create-success-light.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MOD-03",
+      "name": "Server Management",
+      "directory": "03-server-management",
+      "screens": [
+        {
+          "id": "SM-01",
+          "name": "Server Listing & Details Sheet",
+          "screenId": "a25a479a32d54a2196dd39c37b546266",
+          "screenIdSheet": "89a0b486766a4ec7bc144c03bbf2f3f5",
+          "path": "03-server-management/01-listing/specs.md",
+          "status": "GENERATED",
+          "files": {
+            "layout": "03-server-management/01-listing/stitch_ui/listing-light.html",
+            "preview": "03-server-management/01-listing/stitch_ui/listing-light.png",
+            "layoutSheet": "03-server-management/01-listing/stitch_ui/listing-sheet-light.html",
+            "previewSheet": "03-server-management/01-listing/stitch_ui/listing-sheet-light.png"
+          }
+        },
+        {
+          "id": "SM-02",
+          "name": "Server Details (Tabbed)",
+          "screenId": "2ad0259b70954231bff41409331129c4",
+          "screenIdTelemetry": "6dd81abc46da4534b1f549b437bb4f3a",
+          "screenIdEndpoint": "1c7813dab1444183bb3c737f86209fbc",
+          "path": "03-server-management/02-details/specs.md",
+          "status": "GENERATED",
+          "files": {
+            "layout": "03-server-management/02-details/stitch_ui/details-light.html",
+            "preview": "03-server-management/02-details/stitch_ui/details-light.png",
+            "layoutTelemetry": "03-server-management/02-details/stitch_ui/details-telemetry-light.html",
+            "previewTelemetry": "03-server-management/02-details/stitch_ui/details-telemetry-light.png",
+            "layoutEndpoint": "03-server-management/02-details/stitch_ui/details-endpoint-light.html",
+            "previewEndpoint": "03-server-management/02-details/stitch_ui/details-endpoint-light.png"
+          }
+        },
+        {
+          "id": "SM-03",
+          "name": "Add Compute Node Form",
+          "screenId": "1660959fda3649dfa8356aa2de020130",
+          "path": "03-server-management/03-create/specs.md",
+          "status": "GENERATED",
+          "files": {
+            "layout": "03-server-management/03-create/stitch_ui/create-light.html",
+            "preview": "03-server-management/03-create/stitch_ui/create-light.png"
           }
         }
       ]
