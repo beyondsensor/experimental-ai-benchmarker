@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import statusRoutes from '@/modules/status/status.routes';
 import ollamaRoutes from '@/modules/ollama/ollama.routes';
+import swaggerUi from 'swagger-ui-express';
+import { generateSwaggerSpec } from '@/shared/utils/swagger';
 
 dotenv.config();
 
@@ -15,6 +17,10 @@ app.use(express.json());
 // Routes
 app.use('/api/status', statusRoutes);
 app.use('/api/ollama', ollamaRoutes);
+
+// Swagger Documentation
+const spec = generateSwaggerSpec();
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(spec));
 
 // Error Handling
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
