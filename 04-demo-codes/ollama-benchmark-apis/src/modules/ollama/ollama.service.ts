@@ -1,33 +1,33 @@
 import { Ollama } from 'ollama';
-import { isValidJsonSchema } from './ajv';
+import { isValidJsonSchema } from '@/shared/utils/ajv';
 
 export type GenerateRequest = {
     host: string;
     model: string;
     prompt: string;
-    imagePath: string;
+    imagePath?: string;
     jsonSchema: string;
 }
 
 /**
  * Generate using Ollama with JSON Schema
- * @param param0 Generation Request and Test Plan
- * @returns 
  */
 export async function generateWithSchema({ host, imagePath, jsonSchema, model, prompt }: GenerateRequest) {
 
-    if (!isValidJsonSchema(jsonSchema)) {
-        throw new Error("Invalid JSON Schema");
+    const validation = isValidJsonSchema(jsonSchema);
+    if (!validation.valid) {
+        throw new Error(`Invalid JSON Schema: ${validation.error}`);
     }
+    
     const ollama = new Ollama({ host });
-    /// Generate the Response from Ollama 
+    
     const response = await ollama.generate({
         model: model,
         prompt: prompt,
-        images: [imagePath],
-        format: jsonSchema,
+        images: imagePath ? [imagePath] : [],
+        format: JSON.parse(jsonSchema),
         options: {
-            temperature: 0 // Keep it strict
+            temperature: 0
         }
     });
 

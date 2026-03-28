@@ -1,6 +1,5 @@
 import Ajv from "ajv";
 
-// Create an Ajv instance
 const ajv = new Ajv();
 
 /**
@@ -9,10 +8,7 @@ const ajv = new Ajv();
  */
 export function isValidJsonSchema(schemaString: string): { valid: boolean; error?: string } {
     try {
-        // 1. Ensure it's valid JSON first
         const schemaObject = JSON.parse(schemaString);
-
-        // 2. Use Ajv to validate the structure against the JSON Schema spec
         const isSchemaStructureValid = ajv.validateSchema(schemaObject);
 
         if (!isSchemaStructureValid) {
